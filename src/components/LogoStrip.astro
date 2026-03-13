@@ -15,10 +15,10 @@
 				<img src="https://www.vectorlogo.zone/logos/dropbox/dropbox-ar21.svg" alt="Dropbox" class="logo-img" />
 			</div>
 			<div class="logo-item">
-				<img src="/logos/descript.svg" alt="Descript" class="logo-img" />
+				<img src="/logos/descript.svg" alt="Descript" class="logo-img logo-no-invert" />
 			</div>
 			<div class="logo-item">
-				<img src="/logos/opensea.svg" alt="OpenSea" class="logo-img" />
+				<img src="/logos/opensea.svg" alt="OpenSea" class="logo-img logo-no-invert" />
 			</div>
 		</div>
 		<p class="strip-subtext">We've repeatedly built the growth engines that define categories. Now, we're building yours.</p>
@@ -62,6 +62,9 @@
 		filter: brightness(0) invert(1);
 		transition: transform 0.3s;
 		object-fit: contain;
+	}
+	.logo-no-invert {
+		filter: none !important;
 	}
 	/* Optical Scaling: Balanced for the new layout */
 	.logo-item:nth-child(1) .logo-img { height: 48px; } /* Asana */
