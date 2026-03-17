@@ -45,9 +45,9 @@
 		justify-content: center;
 		align-items: center;
 		opacity: 0.9;
-		gap: 4rem; /* Increased gap to prevent collision */
+		gap: 5rem; 
 		margin-bottom: 4rem;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 	}
 	.logo-item {
 		flex: 0 1 auto; /* Don't force them to fill, let them sit naturally */
@@ -97,16 +97,17 @@
 	.floating-logos .logo-item:nth-child(4) .logo-img { animation-delay: 3s; }
 	.floating-logos .logo-item:nth-child(5) .logo-img { animation-delay: 4s; }
 
-	@media (max-width: 768px) {
-		.logo-strip { padding: 4rem 0; }
-		.logo-grid { gap: 2rem; justify-content: center; margin-bottom: 2rem; }
-		.logo-item { min-width: 140px; flex: 0 1 auto; }
-		/* Mobile Scaling: Balanced */
-		.logo-item:nth-child(1) .logo-img { height: 32px; }
-		.logo-item:nth-child(2) .logo-img { height: 28px; }
-		.logo-item:nth-child(3) .logo-img { height: 32px; }
-		.logo-item:nth-child(4) .logo-img { height: 32px; }
-		.logo-item:nth-child(5) .logo-img { height: 36px; }
+	@media (max-width: 968px) {
+		.logo-grid { 
+			gap: 3rem; 
+			justify-content: flex-start; 
+			overflow-x: auto; 
+			padding: 0 2rem 1.5rem; 
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none; /* Hide scrollbar Firefox */
+		}
+		.logo-grid::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+		.logo-item { min-width: 120px; flex: 0 0 auto; }
 		.strip-label { margin-bottom: 3rem; padding: 0 1rem; }
 		.strip-subtext { padding: 0 1.5rem; font-size: 1rem; line-height: 1.6; }
 	}

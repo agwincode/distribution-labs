@@ -1,0 +1,328 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Offerings | Distribution Labs">
+	<main class="offerings-page">
+		<!-- Simple Nav -->
+		<nav class="nav-minimal container">
+			<a href="/" class="logo">DISTRIBUTION LABS</a>
+			<div class="nav-links-minimal">
+				<a href="/">Home</a>
+				<a href="#contact">Book Session</a>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section class="offerings-hero reveal">
+			<div class="container">
+				<p class="badge">OUR SPRINTS</p>
+				<h1 class="serif-h1">Speed and Focus.</h1>
+				<p class="subhead">
+					In a world where you can build anything, judgment tells you what you should. 
+					We help Series A-C founders do faster than their teams can today.
+				</p>
+			</div>
+		</section>
+
+		<!-- 4-Column Sprints Grid -->
+		<section class="sprints-grid-four container">
+			<!-- Founder Storytelling -->
+			<div class="sprint-card-v2 reveal anodized sheen">
+				<div class="card-inner-v2">
+					<div class="sprint-header">
+						<p class="tagline">2–4 WEEKS</p>
+						<h2 class="serif-h3">Founder Storytelling</h2>
+					</div>
+					<p class="hook">
+						Build the founder's real narrative — for press, podcasts, investors, and hiring. 
+						Includes PR strategy for the channels that matter now.
+					</p>
+					<div class="outputs-list">
+						<p class="output-label">OUTPUTS</p>
+						<ul>
+							<li>Founder story for social, podcasts, keynotes, and fundraising.</li>
+							<li>PR strategy for new media and traditional outlets.</li>
+						</ul>
+					</div>
+					<a href="#contact" class="btn-sprint-minimal">Start Sprint</a>
+				</div>
+			</div>
+
+			<!-- Positioning & Differentiation -->
+			<div class="sprint-card-v2 reveal anodized sheen">
+				<div class="card-inner-v2">
+					<div class="sprint-header">
+						<p class="tagline">2–5 WEEKS</p>
+						<h2 class="serif-h3">Positioning & Differentiation</h2>
+					</div>
+					<p class="hook">
+						Figure out what actually makes you different. Deliver a positioning deck, 
+						sales deck storyline, and homepage revamp built on customer evidence.
+					</p>
+					<div class="outputs-list">
+						<p class="output-label">OUTPUTS</p>
+						<ul>
+							<li>Positioning deck with ICP clarification.</li>
+							<li>Sales deck storyline (first call deck).</li>
+							<li>Homepage revamp blueprint.</li>
+						</ul>
+					</div>
+					<a href="#contact" class="btn-sprint-minimal">Start Sprint</a>
+				</div>
+			</div>
+
+			<!-- Growth Engine -->
+			<div class="sprint-card-v2 reveal anodized sheen">
+				<div class="card-inner-v2">
+					<div class="sprint-header">
+						<p class="tagline">6–8 WEEKS</p>
+						<h2 class="serif-h3">Growth Engine</h2>
+					</div>
+					<p class="hook">
+						Diagnose why you're not growing faster. Deliver a 90-day roadmap, 
+						channel-by-channel recommendations, and a next-hire plan.
+					</p>
+					<div class="outputs-list">
+						<p class="output-label">OUTPUTS</p>
+						<ul>
+							<li>Revenue engine diagnostic memo.</li>
+							<li>90-day prioritized roadmap (3–5 moves).</li>
+							<li>Channel assessment (keep/kill/experiment).</li>
+							<li>Next-hire recommendation for acceleration.</li>
+						</ul>
+					</div>
+					<a href="#contact" class="btn-sprint-minimal">Start Sprint</a>
+				</div>
+			</div>
+
+			<!-- AI Transformation -->
+			<div class="sprint-card-v2 reveal anodized sheen">
+				<div class="card-inner-v2">
+					<div class="sprint-header">
+						<p class="tagline">2–4 MONTHS</p>
+						<h2 class="serif-h3">AI Transformation</h2>
+					</div>
+					<p class="hook">
+						Level up your marketing org with real AI workflows — by team, by function, not point solutions.
+					</p>
+					<div class="outputs-list">
+						<p class="output-label">OUTPUTS</p>
+						<ul>
+							<li>Automated workflows for Events, Content, etc.</li>
+							<li>Protocol for where AI executes vs. where humans lead.</li>
+							<li>Clear map of AI utility vs. human-in-the-loop.</li>
+						</ul>
+					</div>
+					<a href="#contact" class="btn-sprint-minimal">Start Sprint</a>
+				</div>
+			</div>
+		</section>
+
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	.offerings-page {
+		padding-top: 2rem;
+		background: var(--bg-charcoal);
+	}
+
+	.nav-minimal {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.5rem 0;
+		margin-bottom: 4rem;
+	}
+
+	.logo {
+		font-family: var(--font-sans);
+		font-weight: 600;
+		letter-spacing: 0.2rem;
+		font-size: 0.9rem;
+		color: var(--fg-white);
+		text-decoration: none;
+	}
+
+	.nav-links-minimal {
+		display: flex;
+		gap: 3rem;
+	}
+
+	.nav-links-minimal a {
+		color: var(--fg-muted);
+		text-decoration: none;
+		font-size: 0.8rem;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+		transition: all 0.3s;
+	}
+
+	.nav-links-minimal a:hover {
+		color: var(--fg-white);
+	}
+
+	.offerings-hero {
+		padding: 4rem 0 6rem;
+		text-align: center;
+	}
+
+	.serif-h1 {
+		font-size: 5rem;
+		line-height: 1.1;
+		margin-bottom: 2rem;
+		font-family: var(--font-serif);
+	}
+
+	.subhead {
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		color: var(--fg-muted);
+		max-width: 800px;
+		margin: 0 auto;
+		line-height: 1.6;
+		font-style: italic;
+	}
+
+	.sprints-grid-four {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+		padding-bottom: 10rem;
+		align-items: stretch;
+	}
+
+	.sprint-card-v2 {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid var(--border-dim);
+		position: relative;
+		overflow: hidden;
+		transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+		display: flex;
+	}
+
+	.card-inner-v2 {
+		padding: 2.5rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.anodized:hover {
+		border-color: var(--p-blue);
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(10, 10, 10, 1) 100%);
+		transform: translateY(-5px);
+	}
+
+	/* Sheen Animation */
+	@keyframes sheen {
+		0% { transform: translateX(-100%) rotate(45deg); }
+		100% { transform: translateX(200%) rotate(45deg); }
+	}
+	.sheen::after {
+		content: "";
+		position: absolute;
+		top: -50%; left: -50%; width: 200%; height: 200%;
+		background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+		transform: rotate(45deg);
+		animation: sheen 10s infinite;
+		pointer-events: none;
+	}
+
+	.tagline {
+		font-size: 0.6rem;
+		letter-spacing: 0.2rem;
+		color: var(--p-orange);
+		margin-bottom: 1rem;
+		font-weight: 900;
+	}
+
+	.serif-h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1.25rem;
+		line-height: 1.2;
+		font-family: var(--font-serif);
+		min-height: 3.6rem;
+	}
+
+	.hook {
+		font-size: 0.9rem;
+		color: var(--fg-muted);
+		line-height: 1.5;
+		margin-bottom: 2rem;
+	}
+
+	.outputs-list {
+		flex-grow: 1;
+		margin-bottom: 2.5rem;
+	}
+
+	.output-label {
+		font-size: 0.55rem;
+		font-weight: 900;
+		letter-spacing: 0.15rem;
+		color: var(--p-sky);
+		margin-bottom: 1rem;
+		border-bottom: 1px solid rgba(180, 184, 240, 0.2);
+		padding-bottom: 0.4rem;
+		display: inline-block;
+	}
+
+	.outputs-list ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.outputs-list li {
+		font-size: 0.85rem;
+		color: var(--fg-white);
+		line-height: 1.4;
+		margin-bottom: 0.8rem;
+		position: relative;
+		padding-left: 1rem;
+	}
+
+	.outputs-list li::before {
+		content: "—";
+		position: absolute;
+		left: 0;
+		color: var(--p-orange);
+		opacity: 0.6;
+	}
+
+	.btn-sprint-minimal {
+		text-decoration: none;
+		color: var(--fg-white);
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		border: 1px solid var(--border-dim);
+		padding: 0.8rem;
+		transition: all 0.3s;
+		text-align: center;
+		display: block;
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.btn-sprint-minimal:hover {
+		background: var(--p-blue);
+		color: var(--fg-white);
+		border-color: var(--p-blue);
+	}
+
+	@media (max-width: 1200px) {
+		.sprints-grid-four { grid-template-columns: repeat(2, 1fr); }
+		.serif-h1 { font-size: 4rem; }
+	}
+
+	@media (max-width: 768px) {
+		.sprints-grid-four { grid-template-columns: 1fr; }
+		.serif-h1 { font-size: 3rem; }
+		.subhead { font-size: 1.25rem; }
+		.sprint-card-v2 { min-height: auto; }
+	}
+</style>

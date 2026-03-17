@@ -24,7 +24,12 @@ const {
 	</head>
 	<body class="distro-body">
 		<div class="grain"></div>
-		
+
+		<!-- Atmospheric Morph Glow -->
+		<div class="morph-glow-container">
+			<div class="morph-glow" id="global-glow"></div>
+		</div>
+
 		<slot />
 
 		<script>
@@ -33,32 +38,39 @@ const {
 				document.body.style.setProperty('--scroll', window.pageYOffset.toString());
 			});
 
-			// Intersection Observer for Reveal Animations
+			// Enhanced Intersection Observer for Atmospheric Morph
 			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: '0px 0px -50px 0px'
+				threshold: 0.2,
+				rootMargin: '-10% 0px -20% 0px'
 			};
+
+			const globalGlow = document.getElementById('global-glow');
 
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('active');
+
+						// Update Global Glow based on section
+						const sectionId = entry.target.id || entry.target.tagName.toLowerCase();
+						document.body.setAttribute('data-active-section', sectionId);
+
 						if (entry.target.classList.contains('bento-grid')) {
 							const cards = entry.target.querySelectorAll('.bento-card');
 							cards.forEach((card, index) => {
-								setTimeout(() => card.classList.add('active'), index * 150);
+								setTimeout(() => card.classList.add('active'), index * 100);
 							});
 						}
 					}
 				});
 			}, observerOptions);
 
-			document.querySelectorAll('.reveal, .bento-grid').forEach(el => observer.observe(el));
+			document.querySelectorAll('section, .reveal, .bento-grid').forEach(el => observer.observe(el));
 		</script>
 	</body>
-</html>
+	</html>
 
-<style is:global>
+	<style is:global>
 	:root {
 		--bg-charcoal: #12100E; /* Warm Black */
 		--fg-white: #F5F5F0;    /* Off White */
@@ -75,10 +87,50 @@ const {
 		--font-serif: 'Optima', 'Candara', 'Segoe UI', source-sans-pro, sans-serif;
 		--font-sans: 'Helvetica Now Condensed', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
 		--scroll: 0;
+
+		/* Morph Transitions */
+		--glow-color: var(--p-sky);
+		--glow-top: 20%;
+		--glow-left: 80%;
+		--glow-opacity: 0.08;
 	}
 
-	.distro-body {
-		background: var(--bg-charcoal) !important;
+	/* Dynamic Section States */
+	[data-active-section="hero"] { --glow-color: var(--p-sky); --glow-top: 10%; --glow-left: 70%; --glow-opacity: 0.12; }
+	[data-active-section="offerings"] { --glow-color: var(--p-orange); --glow-top: 40%; --glow-left: 20%; --glow-opacity: 0.08; }
+	[data-active-section="about"] { --glow-color: var(--p-green); --glow-top: 70%; --glow-left: 60%; --glow-opacity: 0.1; }
+	[data-active-section="footer"] { --glow-color: var(--p-blue); --glow-top: 90%; --glow-left: 40%; --glow-opacity: 0.05; }
+
+	.morph-glow-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+		pointer-events: none;
+		overflow: hidden;
+	}
+
+	.morph-glow {
+		position: absolute;
+		top: var(--glow-top);
+		left: var(--glow-left);
+		width: 60vw;
+		height: 60vw;
+		background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+		opacity: var(--glow-opacity);
+		filter: blur(120px);
+		transform: translate(-50%, -50%);
+		transition: 
+			top 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+			left 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+			background 2s ease,
+			opacity 1.5s ease;
+		will-change: top, left, background;
+	}
+
+	.distro-body {		background: var(--bg-charcoal) !important;
 		color: var(--fg-white) !important;
 		font-family: var(--font-sans) !important;
 		margin: 0;
