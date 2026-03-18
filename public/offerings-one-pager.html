@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerings | Distribution Labs</title>
+    <style>
+        :root {
+            /* Brand Palette from Screenshot */
+            --bg-charcoal: #12100E;
+            --fg-white: #F5F5F0;
+            --p-orange: #E66B3D;
+            --p-sky: #B4B8F0;
+            --p-brown: #633324;
+            --p-pink: #E6B3C7;
+            --p-gray: #94918C;
+            --p-green: #2D4D35;
+            --p-olive: #8A8E3D;
+            --p-blue: #4D61FF;
+            
+            --border-dim: rgba(0, 0, 0, 0.1);
+            --font-serif: 'Optima', serif;
+            --font-sans: 'Helvetica Now Condensed', sans-serif;
+        }
+
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            background-color: #FFFFFF; /* High-contrast for print */
+            color: #12100E; /* Warm Black for text */
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            line-height: 1.3;
+            width: 7.5in;
+            height: 10in;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            border-bottom: 2px solid var(--bg-charcoal);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--bg-charcoal);
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--bg-charcoal);
+        }
+
+        .subhead {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--p-gray);
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /* 2x2 Grid to save vertical space */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .card {
+            border: 1px solid var(--p-gray);
+            background: var(--fg-white);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            letter-spacing: 0.1rem;
+            color: var(--p-orange);
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--bg-charcoal);
+            min-height: 3.4rem;
+        }
+
+        .hook {
+            font-size: 0.95rem;
+            color: #333;
+            margin: 0 0 15px 0;
+            flex-grow: 0;
+        }
+
+        .outputs-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            color: var(--p-blue);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--p-sky);
+            padding-bottom: 3px;
+            display: inline-block;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        li {
+            font-size: 0.85rem;
+            padding-left: 12px;
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--bg-charcoal);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--p-orange);
+            font-weight: 900;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--p-gray);
+            font-size: 0.7rem;
+            color: var(--p-gray);
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .card { background-color: #F5F5F0 !important; border: 1px solid #94918C !important; }
+            .badge { color: #E66B3D !important; }
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <div class="logo">Distribution Labs</div>
+            <div class="header-title">
+                <h1>Storytelling and Growth Strategy.</h1>
+                <p class="subhead">High-leverage marketing sprints for Series A–C Founders.</p>
+            </div>
+        </header>
+
+    <div class="grid">
+        <!-- Founder Storytelling -->
+        <div class="card">
+            <div>
+                <span class="badge">2–4 WEEKS</span>
+                <h2>Founder Storytelling</h2>
+                <p class="hook">Build the founder's real narrative — for press, podcasts, investors, and hiring. Includes PR strategy for the channels that matter now.</p>
+            </div>
+            <div>
+                <span class="outputs-label">OUTPUTS</span>
+                <ul>
+                    <li>Founder story for social/podcasts.</li>
+                    <li>Narrative Brief for fundraising.</li>
+                    <li>PR strategy for new media channels.</li>
+                    <li>Key talk tracks and speaker bio.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Positioning & Differentiation -->
+        <div class="card">
+            <div>
+                <span class="badge">2–5 WEEKS</span>
+                <h2>Positioning & Differentiation</h2>
+                <p class="hook">Figure out what actually makes you different. Deliver a positioning deck, sales deck storyline, and homepage revamp built on customer evidence.</p>
+            </div>
+            <div>
+                <span class="outputs-label">OUTPUTS</span>
+                <ul>
+                    <li>Positioning deck & ICP clarification.</li>
+                    <li>Sales deck storyline (First Call).</li>
+                    <li>Homepage revamp blueprint.</li>
+                    <li>Competitor differentiation map.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Growth Engine -->
+        <div class="card">
+            <div>
+                <span class="badge">6–8 WEEKS</span>
+                <h2>Growth Engine</h2>
+                <p class="hook">Diagnose why you're not growing faster. Deliver a 90-day roadmap, channel-by-channel recommendations, and a next-hire plan.</p>
+            </div>
+            <div>
+                <span class="outputs-label">OUTPUTS</span>
+                <ul>
+                    <li>Revenue diagnostic memo.</li>
+                    <li>Channel keep/kill assessment.</li>
+                    <li>90-day prioritized roadmap.</li>
+                    <li>Next-hire recommendation/seniority.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- AI Transformation -->
+        <div class="card">
+            <div>
+                <span class="badge">2–4 MONTHS</span>
+                <h2>AI Transformation</h2>
+                <p class="hook">Level up your marketing org with real AI workflows — by team, by function, not point solutions. Define where the human ends and the agent begins.</p>
+            </div>
+            <div>
+                <span class="outputs-label">OUTPUTS</span>
+                <ul>
+                    <li>Custom Events/Content workflows.</li>
+                    <li>AI Utility vs Human-in-the-loop map.</li>
+                    <li>Operational protocol for AI agents.</li>
+                    <li>Team velocity audit and training plan.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Distribution Labs // High-Leverage Marketing for Series A–C
+    </footer>
+</body>
+</html>
