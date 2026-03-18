@@ -8,14 +8,14 @@
 
 	<!-- Background Video (Pinned Right) -->
 	<div class="hero-video-bg">
-		<video autoplay muted loop playsinline class="hero-video">
+		<video autoplay muted loop playsinline class="hero-video" poster="/hero-poster.jpg">
 			<source src="/bg-video.mp4?v=3" type="video/mp4">
 		</video>
 		<div class="hero-video-fade"></div>
 	</div>
 
 	<div class="container hero-container">
-		<nav class="nav-minimal">
+		<nav class="nav-minimal sticky-mobile">
 			<span class="logo">DISTRIBUTION LABS</span>
 			<div class="nav-links-minimal">
 				<button class="btn-cta-small">Book Session</button>
@@ -138,7 +138,23 @@
 		align-items: center;
 		padding: 2.5rem 0;
 		position: relative;
-		z-index: 10;
+		z-index: 100;
+		transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	@media (max-width: 768px) {
+		.nav-minimal.sticky-mobile {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 1.5rem 1.5rem;
+			background: rgba(18, 16, 14, 0.8);
+			backdrop-filter: blur(10px);
+			border-bottom: 1px solid var(--border-dim);
+		}
+		.nav-minimal.sticky-mobile .logo { font-size: 0.75rem; }
+		.hero-split { padding-top: 8rem; }
 	}
 	.logo {
 		font-family: var(--font-sans);
