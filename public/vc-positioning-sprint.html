@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VC Positioning Sprint | Distribution Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+
+        :root {
+            --black:  #191514;
+            --white:  #edece3;
+            --orange: #ff5402;
+            --sky:    #a2a1f8;
+            --gray:   #a38c97;
+
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans:  'Instrument Sans', 'Helvetica Neue', Helvetica, sans-serif;
+
+            --rule:  rgba(25, 21, 20, 0.10);
+            --rule2: rgba(25, 21, 20, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--black);
+            font-family: var(--sans);
+            width: 816px;
+            min-height: 1056px;
+            padding: 44px 60px 36px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── HEADER ─────────────────────────────────── */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--orange);
+            margin-bottom: 36px;
+        }
+
+        .logo {
+            font-family: var(--sans);
+            font-weight: 800;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--sky);
+            padding: 4px 10px;
+            transform: skewX(-8deg);
+            display: inline-block;
+        }
+
+        .header-right {
+            font-family: var(--sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        @media print {
+            body { background: #edece3 !important; }
+        }
+
+        /* ── HERO ────────────────────────────────────── */
+        /* #1: block layout — pills move below h1        */
+        .hero {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: 2.8rem;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 0.01em;
+            color: var(--black);
+            max-width: 600px;
+        }
+
+        .hero-aside {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .pill {
+            font-size: 0.64rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--orange);
+            border: 1px solid rgba(255, 84, 2, 0.45);
+            padding: 5px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .pill-ghost {
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray);
+            white-space: nowrap;
+        }
+
+        .hero-sub {
+            font-size: 0.84rem;
+            color: var(--gray);
+            line-height: 1.6;
+            max-width: 58ch;
+            margin-bottom: 22px;
+        }
+
+        /* ── LABELS ──────────────────────────────────── */
+        .label,
+        .col-label {
+            display: block;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 10px;
+        }
+
+        /* ── PROCESS ─────────────────────────────────── */
+        .process { margin-bottom: 20px; }
+
+        .step {
+            display: grid;
+            grid-template-columns: 28px 175px 1fr;
+            column-gap: 22px;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .step:first-of-type { border-top: 1px solid var(--rule); }
+
+        .step-num {
+            font-family: var(--serif);
+            font-size: 0.68rem;
+            color: rgba(25, 21, 20, 0.35);
+            letter-spacing: 0.05em;
+            padding-top: 3px;
+        }
+
+        .step-name {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--black);
+            letter-spacing: 0.015em;
+        }
+
+        .step-desc {
+            font-size: 0.79rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* ── DELIVERABLES + VALUE ────────────────────── */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .d-list { list-style: none; }
+
+        .d-list li {
+            padding: 7px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .d-list li:first-child {
+            border-top: 1px solid var(--rule);
+        }
+
+        .d-list li strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 1px;
+        }
+
+        .d-list li span {
+            display: block;
+            font-size: 0.73rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        .v-list { list-style: none; }
+
+        .v-list li {
+            padding: 7px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .v-title {
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 2px;
+        }
+
+        .v-body {
+            display: block;
+            font-size: 0.73rem;
+            color: var(--gray);
+            line-height: 1.45;
+        }
+
+        /* ── TEAM FOOTER ─────────────────────────────── */
+        .team-footer {
+            margin-top: auto;
+            background: var(--black);
+            border-left: 6px solid var(--orange);
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-left: -60px;
+            margin-right: -60px;
+            margin-bottom: -36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .team-names {
+            font-family: var(--serif);
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--sky);
+            letter-spacing: 0.02em;
+        }
+
+        .team-names a {
+            color: var(--sky);
+            text-decoration: none;
+        }
+
+        .team-names a:hover { text-decoration: underline; }
+
+        .site {
+            font-size: 0.6rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 700;
+        }
+
+        /* #5: all text wordmarks — consistent across all companies */
+        .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .co-wm {
+            font-family: var(--sans);
+            font-size: 0.56rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(237, 236, 227, 0.55);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Distribution Labs</div>
+    </header>
+
+    <!-- HERO -->
+    <!-- #1: no <br> tags — max-width controls natural wrap -->
+    <div class="hero">
+        <h1>Most VCs look identical to the founders who matter most.</h1>
+        <!-- #4: pills as horizontal strip below headline -->
+        <div class="hero-aside">
+            <span class="pill">3–5 Weeks</span>
+            <span class="pill-ghost">Interview-driven</span>
+            <span class="pill-ghost">Evidence-backed</span>
+        </div>
+    </div>
+
+    <!-- #3: one sharp sentence -->
+    <p class="hero-sub">We interview your GPs, portfolio companies, and LPs, pull your pipeline data, and build positioning that's true, differentiated, and impossible to copy.</p>
+
+    <!-- PROCESS -->
+    <div class="process">
+        <span class="label">The Process</span>
+
+        <div class="step">
+            <span class="step-num">01</span>
+            <span class="step-name">Data &amp; Intake</span>
+            <span class="step-desc">Pipeline data, win/loss patterns, existing decks, LP letters, website copy. We build the full picture before asking a single question.</span>
+        </div>
+
+        <div class="step">
+            <span class="step-num">02</span>
+            <span class="step-name">Stakeholder Interviews</span>
+            <span class="step-desc">30–45 min conversations across your full ecosystem: GPs, operating partners, portfolio founders, and LPs. We listen for what you do that no other fund can honestly claim.</span>
+        </div>
+
+        <div class="step">
+            <span class="step-num">03</span>
+            <span class="step-name">Synthesis Workshop</span>
+            <span class="step-desc">We present 4–6 positioning territories, each ranked by differentiation strength and messaging risk. You make the strategic choice — we make it clear.</span>
+        </div>
+
+        <div class="step">
+            <span class="step-num">04</span>
+            <span class="step-name">Delivery</span>
+            <span class="step-desc">Production-ready outputs aligned to one clear point of view — positioning deck, LP narrative, and founder messaging.</span>
+        </div>
+    </div>
+
+    <!-- #2: .rule div removed — last step border closes the section -->
+
+    <!-- DELIVERABLES + VALUE -->
+    <div class="split">
+        <div>
+            <!-- #8: consistent orange label -->
+            <span class="col-label">What You Walk Away With</span>
+            <!-- #7: serif name + small description, arrows removed -->
+            <ul class="d-list">
+                <li><strong>Positioning Territories Doc</strong><span>4–6 options ranked by differentiation and downstream risk</span></li>
+                <li><strong>Internal Alignment Deck</strong><span>One source of truth for how your fund describes itself</span></li>
+                <li><strong>LP Narrative Framework</strong><span>Fundraising language built from what your best LPs actually value</span></li>
+                <li><strong>Founder-Facing Messaging</strong><span>Why the right founders should take your check over anyone else's</span></li>
+                <li><strong>Competitive Differentiation Map</strong><span>Where you win, where you compete, where to pivot</span></li>
+            </ul>
+        </div>
+        <div>
+            <!-- #8: consistent orange label -->
+            <span class="col-label">Why It Matters</span>
+            <!-- #10: sans bold titles to contrast with serif deliverable names -->
+            <ul class="v-list">
+                <li>
+                    <span class="v-title">Win the deals you deserve.</span>
+                    <span class="v-body">Founders choose partners with a clear, authentic point of view. Generic positioning loses to conviction every time.</span>
+                </li>
+                <li>
+                    <span class="v-title">Close LPs faster.</span>
+                    <span class="v-body">A crisp narrative shortens re-up conversations and opens doors to allocators who didn't know you existed.</span>
+                </li>
+                <li>
+                    <span class="v-title">Align your whole team.</span>
+                    <span class="v-body">Every GP and partner tells the same story — in deal rooms, on podcasts, at LP days.</span>
+                </li>
+                <li>
+                    <span class="v-title">Stop losing to narrative.</span>
+                    <span class="v-body">You may be the best partner in the room. Make sure the room knows it.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="team-footer">
+        <div class="footer-top">
+            <p class="team-names">
+                <a href="https://www.linkedin.com/in/angelagwinegar/" target="_blank">Angela Winegar</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.linkedin.com/in/smcharlton/" target="_blank">Sarah Charlton</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.linkedin.com/in/whitneydsteele/" target="_blank">Whitney Steele</a>
+            </p>
+            <p class="site">distribution-labs.com</p>
+        </div>
+    </div>
+
+</body>
+</html>
