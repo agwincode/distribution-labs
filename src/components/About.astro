@@ -1,75 +1,160 @@
 ---
 ---
 
-<section id="about" class="about-section reveal">
+<section id="about" class="about reveal">
 	<div class="container">
-		<div class="about-split">
+
+		<div class="about-grid">
+
+			<!-- Left: headline + label -->
 			<div class="about-left">
-				<h2>We've held your title. We know what the hard parts are.</h2>
-				<p class="about-lead">We've been in-house. We've built the marketing teams, owned the pipeline, and managed the agencies. We do this work differently because we've had your job.</p>
+				<p class="section-label">THE TEAM</p>
+				<h2 class="about-h2">We've held<br>your title.<br><em>We know what<br>the hard parts are.</em></h2>
 			</div>
-			
-			<div class="model-stack">
-				<div class="pill-stack">
-					<div class="pill-item"><span class="dot"></span> We've shipped from your seat.</div>
-					<div class="pill-item"><span class="dot"></span> We move at your pace.</div>
-					<div class="pill-item"><span class="dot"></span> Story that earns the deal.</div>
+
+			<!-- Right: copy + points + CTA -->
+			<div class="about-right">
+				<p class="about-lead">
+					We've been in-house. Built the marketing teams, owned the pipeline, managed the agencies.
+					We do this work differently because we've had your job.
+				</p>
+
+				<div class="about-points">
+					<div class="point">
+						<span class="point-num">01</span>
+						<span class="point-text">We've shipped from your seat.</span>
+					</div>
+					<div class="point">
+						<span class="point-num">02</span>
+						<span class="point-text">We move at your pace.</span>
+					</div>
+					<div class="point">
+						<span class="point-num">03</span>
+						<span class="point-text">Story that earns the deal.</span>
+					</div>
 				</div>
+
+				<a href="#contact" class="about-cta">Work with us →</a>
 			</div>
+
 		</div>
+
 	</div>
 </section>
 
 <style>
-	.about-section { padding: 6rem 0; background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-dim); }
-	.about-split {
+	/* ── Deep green section — mood shift ─────── */
+	.about {
+		background: var(--green-dark);
+		padding: 8rem 0;
+	}
+
+	.about-grid {
 		display: grid;
-		grid-template-columns: 1.2fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		gap: 6rem;
 		align-items: start;
 	}
-	.about-left h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem; }
-	.about-lead { font-family: var(--font-serif); font-size: 1.4rem; color: var(--fg-muted); font-style: normal; line-height: 1.5; }
-	
-	.model-stack {
+
+	/* ── Left ─────────────────────────────────── */
+	.section-label {
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.28em;
+		color: var(--orange);
+		margin-bottom: 1.5rem;
+	}
+
+	.about-h2 {
+		font-family: var(--font-display);
+		font-weight: 900;
+		font-size: clamp(2.8rem, 4vw, 3.8rem);
+		text-transform: uppercase;
+		line-height: 1;
+		letter-spacing: -0.01em;
+		margin: 0;
+		color: var(--white);
+	}
+
+	/* Second half in sky — typographic contrast within the headline */
+	.about-h2 em {
+		font-style: normal;
+		color: rgba(237, 236, 227, 0.45);
+	}
+
+	/* ── Right ────────────────────────────────── */
+	.about-lead {
+		font-family: var(--font-body);
+		font-size: 1.05rem;
+		font-weight: 400;
+		color: rgba(237, 236, 227, 0.65);
+		line-height: 1.75;
+		margin-bottom: 3rem;
+	}
+
+	.about-points {
 		display: flex;
 		flex-direction: column;
-		margin-top: 4.5rem;
+		margin-bottom: 3.5rem;
 	}
-	.pill-stack { display: flex; flex-direction: column; gap: 1rem; }
-	.pill-item {
-		background: rgba(255, 255, 255, 0.03);
-		padding: 1rem 2rem;
-		border-radius: 100px;
-		font-size: 1rem;
+
+	.point {
 		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-		border: 1px solid var(--border-dim);
-		width: fit-content;
-		font-family: var(--font-sans);
-		color: var(--fg-white);
-		transition: all 0.3s ease;
-	}
-	.pill-item:hover {
-		background: rgba(255, 255, 255, 0.05);
-		border-color: var(--p-orange);
-		transform: translateX(5px);
-	}
-	.pill-item .dot { width: 10px; height: 10px; background: var(--p-orange); border-radius: 50%; box-shadow: 0 0 15px var(--p-orange); }
-
-	@media (max-width: 968px) {
-		.about-split { grid-template-columns: 1fr; gap: 4rem; }
-		.about-left h2 { font-size: 2.5rem; }
+		align-items: baseline;
+		gap: 1.25rem;
+		padding: 1.1rem 0;
+		border-bottom: 1px solid rgba(237, 236, 227, 0.08);
 	}
 
-	@media (max-width: 768px) {
-		.about-section { padding: 4rem 0; }
-		.about-left h2 { font-size: 2.25rem; text-align: center; }
-		.about-lead { font-size: 1.15rem; text-align: center; line-height: 1.6; }
-		
-		.model-stack { margin-top: 3rem; }
-		.pill-stack { align-items: center; }
-		.pill-item { padding: 0.8rem 1.5rem; font-size: 0.95rem; width: fit-content; justify-content: center; }
+	.point-num {
+		font-family: var(--font-display);
+		font-size: 0.6rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		color: var(--orange);
+		flex-shrink: 0;
+		width: 1.8rem;
+	}
+
+	.point-text {
+		font-family: var(--font-body);
+		font-size: 0.95rem;
+		font-weight: 400;
+		color: var(--white);
+		line-height: 1.5;
+	}
+
+	.about-cta {
+		font-family: var(--font-display);
+		font-size: 0.78rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: var(--white);
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255, 84, 2, 0.5);
+		padding-bottom: 3px;
+		display: inline-block;
+		transition: color 0.2s, border-color 0.2s;
+	}
+	.about-cta:hover {
+		color: var(--orange);
+		border-color: var(--orange);
+	}
+
+	/* ── Responsive ───────────────────────────── */
+	@media (max-width: 900px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+			gap: 3.5rem;
+		}
+		.about { padding: 6rem 0; }
+	}
+
+	@media (max-width: 640px) {
+		.about { padding: 5rem 0; }
+		.about-h2 { font-size: 2.5rem; }
+		.about-lead { font-size: 0.95rem; }
 	}
 </style>

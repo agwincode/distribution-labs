@@ -4,9 +4,9 @@ interface Props {
 	description?: string;
 }
 
-const { 
-	title, 
-	description = "Distribution Labs - Storytelling for Venture-Backed Teams" 
+const {
+	title,
+	description = "Distribution Labs — Operator advisory for venture-backed founders."
 } = Astro.props;
 ---
 
@@ -15,215 +15,120 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
 	<body class="distro-body">
 		<div class="grain"></div>
-
-		<!-- Atmospheric Morph Glow -->
-		<div class="morph-glow-container">
-			<div class="morph-glow" id="global-glow"></div>
-		</div>
-
 		<slot />
 
 		<script>
-			// Scroll Tracking for Parallax Grid
-			window.addEventListener('scroll', () => {
-				document.body.style.setProperty('--scroll', window.pageYOffset.toString());
-			});
-
-			// Enhanced Intersection Observer for Atmospheric Morph
-			const observerOptions = {
-				threshold: 0.2,
-				rootMargin: '-10% 0px -20% 0px'
-			};
-
-			const globalGlow = document.getElementById('global-glow');
-
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('active');
 
-						// Update Global Glow based on section
-						const sectionId = entry.target.id || entry.target.tagName.toLowerCase();
-						document.body.setAttribute('data-active-section', sectionId);
-
-						if (entry.target.classList.contains('bento-grid')) {
-							const cards = entry.target.querySelectorAll('.bento-card');
-							cards.forEach((card, index) => {
-								setTimeout(() => card.classList.add('active'), index * 100);
+						// Stagger engagement rows
+						if (entry.target.classList.contains('engagement-list')) {
+							entry.target.querySelectorAll('.engagement-row').forEach((row, i) => {
+								setTimeout(() => row.classList.add('active'), i * 130);
 							});
 						}
 					}
 				});
-			}, observerOptions);
+			}, { threshold: 0.08, rootMargin: '-5% 0px -5% 0px' });
 
-			document.querySelectorAll('section, .reveal, .bento-grid').forEach(el => observer.observe(el));
+			document.querySelectorAll('.reveal, .engagement-list').forEach(el => observer.observe(el));
 		</script>
 	</body>
 </html>
 
 <style is:global>
 	:root {
-		--bg-charcoal: #12100E; /* Warm Black */
-		--fg-white: #F5F5F0;    /* Off White */
-		--fg-muted: #94918C;    /* Muted Gray */
-		--p-orange: #E66B3D;
-		--p-pink: #E6B3C7;
-		--p-gray: #94918C;
-		--p-brown: #633324;
-		--p-blue: #4D61FF;
-		--p-sky: #B4B8F0;
-		--p-olive: #8A8E3D;
-		--p-green: #2D4D35;
-		--border-dim: rgba(245, 245, 240, 0.1);
-		--font-serif: 'Optima', 'Candara', 'Segoe UI', source-sans-pro, sans-serif;
-		--font-sans: 'Helvetica Now Condensed', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
-		--scroll: 0;
+		/* Core palette */
+		--black:       #191514;
+		--white:       #edece3;
+		--muted:       #a38c97;
+		--orange:      #ff5402;
+		--sky:         #a2a1f8;
+		--green-dark:  #192b1e;
 
-		/* Morph Transitions */
-		--glow-color: var(--p-sky);
-		--glow-top: 20%;
-		--glow-left: 80%;
-		--glow-opacity: 0.08;
+		/* Borders */
+		--border:      rgba(237, 236, 227, 0.1);
+		--border-light: rgba(25, 21, 20, 0.13);
+
+		/* Typography */
+		--font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+		--font-body:    'Barlow', 'Helvetica Neue', sans-serif;
+
+		/* Legacy aliases — keep older components working */
+		--bg-charcoal: var(--black);
+		--fg-white:    var(--white);
+		--fg-muted:    var(--muted);
+		--p-orange:    var(--orange);
+		--p-sky:       var(--sky);
+		--p-green:     #2D4D35;
+		--p-olive:     #8A8E3D;
+		--border-dim:  var(--border);
+		--font-sans:   var(--font-body);
+		--font-serif:  var(--font-display);
 	}
 
-	/* Dynamic Section States */
-	[data-active-section="hero"] { --glow-color: var(--p-sky); --glow-top: 10%; --glow-left: 70%; --glow-opacity: 0.12; }
-	[data-active-section="offerings"] { --glow-color: var(--p-orange); --glow-top: 40%; --glow-left: 20%; --glow-opacity: 0.08; }
-	[data-active-section="about"] { --glow-color: var(--p-green); --glow-top: 70%; --glow-left: 60%; --glow-opacity: 0.1; }
-	[data-active-section="footer"] { --glow-color: var(--p-blue); --glow-top: 90%; --glow-left: 40%; --glow-opacity: 0.05; }
+	*, *::before, *::after { box-sizing: border-box; }
 
-	.morph-glow-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		z-index: -1;
-		pointer-events: none;
-		overflow: hidden;
-	}
+	html { scroll-behavior: smooth; }
 
-	.morph-glow {
-		position: absolute;
-		top: var(--glow-top);
-		left: var(--glow-left);
-		width: 60vw;
-		height: 60vw;
-		background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
-		opacity: var(--glow-opacity);
-		filter: blur(120px);
-		transform: translate(-50%, -50%);
-		transition: 
-			top 1.5s cubic-bezier(0.23, 1, 0.32, 1),
-			left 1.5s cubic-bezier(0.23, 1, 0.32, 1),
-			background 2s ease,
-			opacity 1.5s ease;
-		will-change: top, left, background;
-	}
-
-	.distro-body {
-		background: var(--bg-charcoal) !important;
-		color: var(--fg-white) !important;
-		font-family: var(--font-sans) !important;
+	body.distro-body {
+		background: var(--black);
+		color: var(--white);
+		font-family: var(--font-body);
+		font-weight: 400;
 		margin: 0;
 		padding: 0;
 		overflow-x: hidden;
 		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.distro-body * { box-sizing: border-box; }
-
-	/* Grain Texture */
+	/* Film grain overlay */
 	.grain {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-		z-index: 99;
-		opacity: 0.04;
-		background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-	}
-
-	.distro-body::before {
-		content: "";
 		position: fixed;
 		top: -50%;
 		left: -50%;
 		width: 200%;
 		height: 200%;
-		background-image: 
-			linear-gradient(to right, var(--border-dim) 1px, transparent 1px),
-			linear-gradient(to bottom, var(--border-dim) 1px, transparent 1px);
-		background-size: 60px 60px;
-		z-index: -1;
 		pointer-events: none;
-		transform: translateY(calc(var(--scroll) * -0.2px));
-		opacity: 0.6;
+		z-index: 9999;
+		opacity: 0.032;
+		background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+		background-size: 180px 180px;
 	}
 
-	/* Fade out grid at bottom */
-	.distro-body::after {
-		content: "";
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 40vh;
-		background: linear-gradient(to top, var(--bg-charcoal), transparent);
-		z-index: -1;
-		pointer-events: none;
-	}
-
+	/* Layout container */
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0 2rem;
-		position: relative;
+		padding: 0 3rem;
 	}
 
-	h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
-
-	/* Global Reveal Animation Classes */
+	/* Scroll reveal */
 	.reveal {
 		opacity: 0;
-		transform: translateY(30px);
-		transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+		transform: translateY(22px);
+		transition:
+			opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
+			transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 	.reveal.active {
-		opacity: 1 !important;
-		transform: translateY(0) !important;
-	}
-
-	.badge {
-		font-size: 0.65rem;
-		letter-spacing: 0.1rem;
-		color: var(--p-orange);
-		border: 1px solid rgba(230, 107, 61, 0.3);
-		padding: 0.3rem 0.6rem;
-		display: inline-block;
-		margin-bottom: 1.5rem;
-		font-weight: 900;
-	}
-
-	@media (max-width: 968px) {
-		.container { padding: 0 1.5rem; }
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	@media (max-width: 768px) {
-		:root {
-			--section-padding: 4rem;
-		}
-		.container { padding: 0 1.25rem; }
+		.container { padding: 0 1.5rem; }
 	}
 </style>

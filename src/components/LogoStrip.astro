@@ -3,8 +3,10 @@
 
 <section class="logo-strip reveal">
 	<div class="container">
+
 		<p class="strip-label">WHERE WE'VE BUILT</p>
-		<div class="logo-grid">
+
+		<div class="logo-row">
 			<div class="logo-item">
 				<img src="https://www.vectorlogo.zone/logos/asana/asana-ar21.svg" alt="Asana" class="logo-img" />
 			</div>
@@ -15,100 +17,75 @@
 				<img src="https://www.vectorlogo.zone/logos/dropbox/dropbox-ar21.svg" alt="Dropbox" class="logo-img" />
 			</div>
 			<div class="logo-item">
-				<img src="/logos/descript.svg" alt="Descript" class="logo-img logo-no-invert" />
+				<img src="/logos/descript.svg" alt="Descript" class="logo-img" />
 			</div>
 			<div class="logo-item">
-				<img src="/logos/opensea.svg" alt="OpenSea" class="logo-img logo-no-invert" />
+				<img src="/logos/opensea.svg" alt="OpenSea" class="logo-img" />
 			</div>
 		</div>
-		<p class="strip-subtext">The team that built marketing orgs at Asana, Dropbox, Carta, and more.</p>
+
+		<p class="strip-sub">The team that built marketing orgs at Asana, Dropbox, Carta, and more.</p>
+
 	</div>
 </section>
 
 <style>
+	/* ── Light section — stark contrast with dark hero ── */
 	.logo-strip {
-		padding: 6rem 0;
-		background: rgba(255, 255, 255, 0.02);
-		border-top: 1px solid var(--border-dim);
-		border-bottom: 1px solid var(--border-dim);
+		background: var(--white);
+		padding: 5.5rem 0;
 	}
+
 	.strip-label {
-		font-size: 0.75rem;
-		letter-spacing: 0.2rem;
-		color: var(--p-orange);
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.28em;
+		color: var(--muted);
 		text-align: center;
-		margin-bottom: 4rem;
-		font-weight: 600;
+		margin-bottom: 3.5rem;
 	}
-	.logo-grid {
+
+	.logo-row {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		opacity: 0.9;
-		gap: 5rem; 
-		margin-bottom: 4rem;
-		flex-wrap: wrap; /* Smarter mobile distribution */
+		gap: 5rem;
+		flex-wrap: wrap;
+		margin-bottom: 3.5rem;
 	}
+
 	.logo-item {
-		flex: 0 1 auto;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-width: 180px;
 	}
+
+	/* On light bg: brightness(0) renders logos as solid black */
 	.logo-img {
+		height: 36px;
 		width: auto;
-		max-width: 100%;
-		filter: brightness(0) invert(1);
-		transition: transform 0.3s;
+		max-width: 140px;
+		filter: brightness(0);
+		opacity: 0.55;
+		transition: opacity 0.25s;
 		object-fit: contain;
 	}
-	.logo-no-invert {
-		filter: none !important;
-	}
-	/* Optical Scaling */
-	.logo-item:nth-child(1) .logo-img { height: 48px; }
-	.logo-item:nth-child(2) .logo-img { height: 40px; }
-	.logo-item:nth-child(3) .logo-img { height: 48px; }
-	.logo-item:nth-child(4) .logo-img { height: 48px; }
-	.logo-item:nth-child(5) .logo-img { height: 54px; }
+	.logo-img:hover { opacity: 0.85; }
 
-	.logo-img:hover { transform: scale(1.05); }
-	
-	.strip-subtext {
+	.strip-sub {
+		font-family: var(--font-body);
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: #7a6a70;
 		text-align: center;
-		font-family: var(--font-serif);
-		font-size: 1.1rem;
-		color: var(--fg-muted);
-		font-style: normal;
-		max-width: 600px;
-		margin: 0 auto;
+		margin: 0;
+		letter-spacing: 0.01em;
 	}
 
-
-	@media (max-width: 968px) {
-		.logo-grid { 
-			gap: 2.5rem 3.5rem; 
-			padding: 0 1.5rem; 
-			justify-content: center;
-		}
-		.logo-item { 
-			min-width: 100px;
-			flex: 1 1 30%; 
-		}
-		.strip-label { margin-bottom: 3rem; padding: 0 1rem; }
-		.strip-subtext { padding: 0 1.5rem; font-size: 1rem; line-height: 1.6; }
-	}
-
-	@media (max-width: 480px) {
-		.logo-item { 
-			flex: 1 1 40%; 
-		}
-		/* Mobile-specific Optical Scaling */
-		.logo-item:nth-child(1) .logo-img { height: 32px; }
-		.logo-item:nth-child(2) .logo-img { height: 26px; }
-		.logo-item:nth-child(3) .logo-img { height: 32px; }
-		.logo-item:nth-child(4) .logo-img { height: 32px; }
-		.logo-item:nth-child(5) .logo-img { height: 36px; }
+	@media (max-width: 768px) {
+		.logo-strip { padding: 4rem 0; }
+		.logo-row { gap: 2.5rem 3.5rem; }
+		.logo-img { height: 28px; }
 	}
 </style>
