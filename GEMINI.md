@@ -1,19 +1,15 @@
-# Distribution Labs Design System
+# Distribution Labs: Operating Mandate
 
-## Brand Colors (from Screenshot)
-- **Warm Black:** `#12100E` (Primary Background)
-- **Off White:** `#F5F5F0` (Primary Foreground)
-- **Brown:** `#633324`
-- **Orange:** `#E66B3D` (Action/Highlight)
-- **Pink:** `#E6B3C7`
-- **Gray:** `#94918C` (Muted/Subtext)
-- **Green:** `#2D4D35`
-- **Olive:** `#8A8E3D`
-- **Blue:** `#4D61FF`
-- **Sky:** `#B4B8F0` (Secondary Highlight)
+## 1. Core Mandates
+- **Brand Consistency:** Always reference the `BRAND.md` file before generating or modifying any UI components. 
+- **Component Geometry:** Strictly follow the `12px` border-radius and the "60/40" whitespace rule defined in `BRAND.md`.
+- **Typography:** Use the `Instrument` pairing as primary and `Optima/Helvetica` as fallbacks.
 
-## Typography Mandate
-This project is strictly limited to **two primary font families**. Standard system fallbacks (serif/sans-serif) are permitted to ensure cross-platform compatibility, but no additional decorative or web fonts should be introduced.
+## 2. Technical Standards
+- **Vanilla CSS:** Prefer scoped styles within Astro components over global utility classes or frameworks like Tailwind.
+- **Micro-animations:** Incorporate subtle "atmospheric" effects (like the glow-morph and tagline-decipher) to emphasize the "AI-enabled" nature of the firm.
+- **Performance:** Maintain zero-dependency UI components to ensure elite performance on mobile devices.
 
-- **Headlines (Serif):** `Optima`, `serif`
-- **Body & Accents (Sans):** `Helvetica Now Condensed`, `sans-serif`
+## 3. Communication Style
+- **Status Reporting:** Be brief and high-signal. Focus on intent and technical rationale.
+- **Validation:** Always verify the visual output matches the brand's "Expert Narrator" philosophy.
