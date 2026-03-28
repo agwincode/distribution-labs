@@ -3,39 +3,35 @@
 
 <section id="hero" class="hero">
 
-	<!-- Atmospheric sky glow, top-right -->
-	<div class="hero-glow" aria-hidden="true"></div>
-	<!-- Warm orange graze, bottom-left -->
-	<div class="hero-glow-warm" aria-hidden="true"></div>
-
 	<div class="container">
 
 		<nav class="nav">
 			<span class="wordmark">DISTRIBUTION LABS</span>
 			<div class="nav-right">
-				<a href="#offerings" class="nav-link">Work</a>
-				<a href="#about" class="nav-link">About</a>
-				<a href="#contact" class="nav-cta">Book a Session</a>
+				<a href="#team" class="nav-link">Team</a>
+				<a href="#services" class="nav-link">Work</a>
+				<a href="mailto:hello@distribution-labs.com" class="nav-cta">Say Hello</a>
 			</div>
 		</nav>
 
 		<div class="hero-body reveal">
 
-			<p class="eyebrow">— OPERATOR ADVISORY</p>
+			<p class="eyebrow">— GROWTH ADVISORY FOR FOUNDERS</p>
 
 			<h1 class="display-h1">
-				<span class="line line-1">YOUR PRODUCT</span>
-				<span class="line line-2">IS AHEAD OF</span>
-				<span class="line line-3">YOUR <em>STORY.</em></span>
+				<span class="line line-1">OWN THE</span>
+				<span class="line line-2">CATEGORY</span>
+				<span class="line line-3">BEFORE <em>SOMEONE</em></span>
+				<span class="line line-4"><em>ELSE DOES.</em></span>
 			</h1>
 
 			<p class="hero-sub">
-				That gap costs deals. We work with Series A through C founders to close it
-				before a better-funded competitor defines the category for you.
+				We help growth-stage founders build the marketing engine
+				that wins the market — before a competitor does it first.
 			</p>
 
-			<a href="#offerings" class="hero-cta">
-				See the engagements
+			<a href="#team" class="hero-cta">
+				Meet the team
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
 					<path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
@@ -50,38 +46,12 @@
 
 <style>
 	.hero {
-		min-height: 100vh;
+		min-height: 90vh;
 		display: flex;
 		flex-direction: column;
-		background: var(--black);
+		background: var(--white);
 		position: relative;
 		overflow: hidden;
-	}
-
-	/* Atmospheric glows */
-	.hero-glow {
-		position: absolute;
-		top: -15%;
-		right: -5%;
-		width: 65vw;
-		height: 65vw;
-		background: radial-gradient(circle at center, var(--sky) 0%, transparent 60%);
-		opacity: 0.055;
-		filter: blur(90px);
-		pointer-events: none;
-		z-index: 0;
-	}
-	.hero-glow-warm {
-		position: absolute;
-		bottom: 0;
-		left: -10%;
-		width: 45vw;
-		height: 45vw;
-		background: radial-gradient(circle at center, var(--orange) 0%, transparent 65%);
-		opacity: 0.035;
-		filter: blur(100px);
-		pointer-events: none;
-		z-index: 0;
 	}
 
 	.container { position: relative; z-index: 1; }
@@ -99,7 +69,7 @@
 		font-weight: 700;
 		font-size: 0.85rem;
 		letter-spacing: 0.28em;
-		color: var(--white);
+		color: var(--black);
 	}
 
 	.nav-right {
@@ -111,24 +81,30 @@
 	.nav-link {
 		font-family: var(--font-body);
 		font-size: 0.8rem;
-		color: var(--muted);
+		color: rgba(25, 21, 20, 0.45);
 		text-decoration: none;
 		letter-spacing: 0.05em;
 		transition: color 0.2s;
 	}
-	.nav-link:hover { color: var(--white); }
+	.nav-link:hover { color: var(--black); }
 
 	.nav-cta {
-		font-family: var(--font-body);
-		font-size: 0.8rem;
-		color: var(--white);
+		font-family: var(--font-display);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--black);
 		text-decoration: none;
-		letter-spacing: 0.05em;
-		padding-bottom: 2px;
-		border-bottom: 1px solid var(--orange);
-		transition: color 0.2s;
+		border: 1px solid rgba(255, 84, 2, 0.45);
+		padding: 0.45rem 1.1rem;
+		transition: background 0.2s, border-color 0.2s, color 0.2s;
 	}
-	.nav-cta:hover { color: var(--orange); }
+	.nav-cta:hover {
+		background: rgba(255, 84, 2, 0.06);
+		border-color: var(--orange);
+		color: var(--orange);
+	}
 
 	/* ── Hero body ───────────────────────────── */
 	.hero-body {
@@ -139,7 +115,7 @@
 		font-family: var(--font-display);
 		font-size: 0.72rem;
 		letter-spacing: 0.3em;
-		color: var(--muted);
+		color: rgba(25, 21, 20, 0.4);
 		margin-bottom: 2.5rem;
 		font-weight: 400;
 	}
@@ -153,27 +129,28 @@
 		letter-spacing: -0.01em;
 		text-transform: uppercase;
 		margin: 0 0 4rem;
-		color: var(--white);
+		color: var(--black);
 		display: flex;
 		flex-direction: column;
 	}
 
 	.line { display: block; }
 
-	/* "STORY." accent in sky blue */
+	/* "STORY." accent in forest green */
 	.display-h1 em {
 		font-style: normal;
 		color: var(--sky);
 	}
 
-	/* Slight indent on last line — editorial asymmetry */
+	/* Slight indent — editorial asymmetry */
 	.line-3 { padding-left: 0.05em; }
+	.line-4 { padding-left: 0.05em; }
 
 	.hero-sub {
 		font-family: var(--font-body);
 		font-size: 1rem;
 		font-weight: 400;
-		color: var(--muted);
+		color: rgba(25, 21, 20, 0.5);
 		line-height: 1.7;
 		max-width: 440px;
 		margin-bottom: 3.5rem;
@@ -185,12 +162,12 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
-		color: var(--white);
+		color: var(--black);
 		text-decoration: none;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.6rem;
-		border-bottom: 1px solid rgba(255, 84, 2, 0.5);
+		border-bottom: 1px solid rgba(255, 84, 2, 0.4);
 		padding-bottom: 4px;
 		transition: color 0.2s, border-color 0.2s;
 	}
@@ -206,7 +183,7 @@
 		left: 3rem;
 		right: 3rem;
 		height: 1px;
-		background: var(--border);
+		background: rgba(25, 21, 20, 0.08);
 	}
 
 	/* ── Responsive ──────────────────────────── */

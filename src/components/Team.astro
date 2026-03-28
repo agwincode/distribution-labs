@@ -1,0 +1,148 @@
+---
+---
+
+<section id="team" class="team">
+	<div class="container">
+
+		<div class="team-intro reveal">
+			<p class="section-label">THE OPERATORS</p>
+			<h2 class="team-headline">While you're recruiting,<br><em>your market is moving.</em></h2>
+			<p class="team-lead">We build the marketing engine — PR, SEO, demand gen, events — architected to work together while you find the right long-term leader.</p>
+		</div>
+
+		<div class="team-grid">
+
+			<div class="member reveal">
+				<div class="member-photo">
+					<img src="/angela.jpeg" alt="Angela Winegar" width="400" height="400" loading="lazy" />
+				</div>
+				<h3 class="member-name">Angela Winegar</h3>
+				<p class="member-prev">Carta</p>
+			</div>
+
+			<div class="member reveal">
+				<div class="member-photo">
+					<img src="/whitney.jpeg" alt="Whitney Steele" width="400" height="400" loading="lazy" />
+				</div>
+				<h3 class="member-name">Whitney Steele</h3>
+				<p class="member-prev">Descript, OpenSea</p>
+			</div>
+
+			<div class="member reveal">
+				<div class="member-photo">
+					<img src="/sarah.jpeg" alt="Sarah Charlton" width="400" height="400" loading="lazy" />
+				</div>
+				<h3 class="member-name">Sarah Charlton</h3>
+				<p class="member-prev">Moonvalley, Asana, Dropbox</p>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.team {
+		background: var(--black);
+		padding: 8rem 0 9rem;
+		border-top: 1px solid var(--border);
+	}
+
+	/* ── Intro ────────────────────────────────── */
+	.team-intro {
+		margin-bottom: 5rem;
+	}
+
+	.section-label {
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.28em;
+		color: var(--orange);
+		margin-bottom: 1.5rem;
+	}
+
+	.team-headline {
+		font-family: var(--font-display);
+		font-weight: 900;
+		font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+		text-transform: uppercase;
+		line-height: 1;
+		letter-spacing: -0.01em;
+		margin: 0 0 2rem;
+		color: var(--white);
+		max-width: 600px;
+	}
+
+	.team-headline em {
+		font-style: normal;
+		color: var(--sky);
+	}
+
+	.team-lead {
+		font-family: var(--font-body);
+		font-size: 1rem;
+		font-weight: 400;
+		color: rgba(237, 236, 227, 0.55);
+		line-height: 1.75;
+		max-width: 520px;
+		margin: 0;
+	}
+
+	/* ── Grid ─────────────────────────────────── */
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	/* ── Member card ──────────────────────────── */
+	.member-photo {
+		margin-bottom: 1.5rem;
+		overflow: hidden;
+	}
+
+	.member-photo img {
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		object-position: center 20%;
+		filter: grayscale(100%) contrast(1.1) brightness(0.9);
+		transition: filter 0.6s ease;
+		display: block;
+	}
+
+	.member:hover .member-photo img {
+		filter: grayscale(0%) contrast(1) brightness(1);
+	}
+
+	.member-name {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--white);
+		margin: 0 0 0.4rem;
+	}
+
+	.member-prev {
+		font-family: var(--font-body);
+		font-size: 0.82rem;
+		font-weight: 400;
+		color: var(--muted);
+		margin: 0;
+		letter-spacing: 0.02em;
+	}
+
+	/* ── Responsive ───────────────────────────── */
+	@media (max-width: 768px) {
+		.team { padding: 6rem 0 7rem; }
+		.team-intro { margin-bottom: 3.5rem; }
+		.team-grid {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+			max-width: 360px;
+		}
+	}
+</style>

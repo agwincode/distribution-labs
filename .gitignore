@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Personal / context files — never commit these
+Team Background Context/
+Screenshot *.png

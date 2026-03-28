@@ -1,0 +1,113 @@
+---
+---
+
+<section id="services" class="services">
+	<div class="container">
+
+		<p class="section-label reveal">WHAT WE DO</p>
+
+		<div class="services-grid">
+
+			<div class="service reveal">
+				<h3 class="service-name">Positioning</h3>
+				<p class="service-desc">
+					Find the version of your story that's impossible to ignore — then put it in the rooms that change outcomes.
+				</p>
+			</div>
+
+			<div class="service reveal">
+				<h3 class="service-name">Growth Strategy</h3>
+				<p class="service-desc">
+					Funnels, paid, channels — the moves that actually change the number. Built from evidence, not playbooks.
+				</p>
+			</div>
+
+			<div class="service reveal">
+				<h3 class="service-name">Fractional CMO</h3>
+				<p class="service-desc">
+					Keep your marketing velocity when there's a gap in leadership. We've run the team — we can hold the line.
+				</p>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.services {
+		background: var(--white);
+		padding: 7rem 0 8rem;
+	}
+
+	.section-label {
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.28em;
+		color: var(--orange);
+		margin-bottom: 3.5rem;
+	}
+
+	/* ── Grid ─────────────────────────────────── */
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+		border-top: 1px solid var(--border-light);
+	}
+
+	.service {
+		padding: 2.5rem 3rem 2.5rem 0;
+		border-right: 1px solid var(--border-light);
+	}
+
+	.service:first-child {
+		padding-left: 0;
+	}
+
+	.service:not(:first-child) {
+		padding-left: 3rem;
+	}
+
+	.service:last-child {
+		border-right: none;
+		padding-right: 0;
+	}
+
+	.service-name {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: clamp(1.4rem, 2vw, 1.7rem);
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		color: var(--black);
+		margin: 0 0 1.25rem;
+	}
+
+	.service-desc {
+		font-family: var(--font-body);
+		font-size: 0.88rem;
+		font-weight: 400;
+		color: rgba(25, 21, 20, 0.55);
+		line-height: 1.75;
+		margin: 0;
+	}
+
+	/* ── Responsive ───────────────────────────── */
+	@media (max-width: 768px) {
+		.services { padding: 5rem 0 6rem; }
+		.services-grid { grid-template-columns: 1fr; }
+
+		.service,
+		.service:not(:first-child),
+		.service:last-child {
+			padding: 2rem 0;
+			border-right: none;
+			border-bottom: 1px solid var(--border-light);
+		}
+
+		.service:last-child { border-bottom: none; }
+	}
+</style>
