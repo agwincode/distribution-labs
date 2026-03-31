@@ -1,0 +1,161 @@
+---
+---
+
+<nav class="dashboard-nav">
+	<div class="nav-container">
+		<div class="nav-left">
+			<span class="logo-v2">DISTRIBUTION LABS</span>
+			<div class="system-status">
+				<span class="status-dot"></span>
+				<span class="status-label">SYS_ACTIVE: <span id="scroll-display">000</span>%</span>
+			</div>
+		</div>
+
+		<div class="nav-right">
+			<div class="nav-links">
+				<a href="#hero">01_Vision</a>
+				<a href="#matrix">02_Matrix</a>
+				<a href="#about">03_Partner</a>
+			</div>
+			<button class="btn-dashboard">Book Session</button>
+		</div>
+	</div>
+	
+	<!-- The Progress Line -->
+	<div class="nav-progress-bar">
+		<div class="progress-fill"></div>
+	</div>
+</nav>
+
+<script>
+	const scrollDisplay = document.getElementById('scroll-display');
+	window.addEventListener('scroll', () => {
+		const percent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+		if (scrollDisplay) {
+			scrollDisplay.innerText = Math.round(percent).toString().padStart(3, '0');
+		}
+	});
+</script>
+
+<style>
+	.dashboard-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		background: rgba(245, 245, 240, 0.9);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--border-light);
+	}
+
+	.nav-container {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 1.25rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.nav-left {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.logo-v2 {
+		font-weight: 700;
+		font-size: 0.85rem;
+		letter-spacing: 0.15rem;
+		color: var(--fg-warm-black);
+	}
+
+	.system-status {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.4rem 0.8rem;
+		background: #FFF;
+		border: 1px solid var(--border-light);
+		border-radius: 4px;
+	}
+
+	.status-dot {
+		width: 6px;
+		height: 6px;
+		background: var(--p-orange);
+		border-radius: 50%;
+		box-shadow: 0 0 8px var(--p-orange);
+	}
+
+	.status-label {
+		font-size: 0.65rem;
+		font-weight: 600;
+		letter-spacing: 0.05rem;
+		color: var(--p-gray);
+	}
+
+	.status-label span { color: var(--fg-warm-black); }
+
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.nav-links a {
+		text-decoration: none;
+		color: var(--p-gray);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.05rem;
+		transition: all 0.3s ease;
+	}
+
+	.nav-links a:hover { color: var(--p-orange); }
+
+	.btn-dashboard {
+		background: var(--fg-warm-black);
+		color: #FFF;
+		border: none;
+		padding: 0.6rem 1.2rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.05rem;
+		text-transform: uppercase;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	.btn-dashboard:hover {
+		background: var(--p-orange);
+		transform: translateY(-2px);
+	}
+
+	.nav-progress-bar {
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: transparent;
+	}
+
+	.progress-fill {
+		height: 100%;
+		background: var(--p-orange);
+		width: calc(var(--scroll-percent) * 1%);
+		transition: width 0.1s linear;
+	}
+
+	@media (max-width: 968px) {
+		.system-status, .nav-links { display: none; }
+	}
+</style>

@@ -1,0 +1,293 @@
+---
+// v_stitch1 - Home Page (Official Brand Alignment)
+---
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script is:inline>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#edece3", // Official Surface (Off White)
+              "deep-authority": "#191514", // Official Base (Warm Black)
+              "strategic-action": "#ff5402", // Official Action (Orange)
+              "technical-sky": "#a2a1f8", // Official AI Accent (Sky)
+              "muted-gray": "#a38c97", // Official Muted (Gray)
+              "surface-container-high": "#e5e4d9", // Slightly darker than surface for contrast
+            },
+            fontFamily: {
+              "headline": ["Instrument Serif", "serif"],
+              "body": ["Instrument Sans", "sans-serif"],
+              "mono": ["Space Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "12px", "lg": "12px", "xl": "12px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    
+    <style is:inline>
+        body {
+            background-color: #edece3 !important;
+            color: #191514 !important;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 18px;
+        }
+        .technical-overshoot {
+            position: relative;
+        }
+        .technical-overshoot::before, .technical-overshoot::after {
+            content: '';
+            position: absolute;
+            background: #191514;
+            opacity: 0.2;
+        }
+        .overshoot-tr::before { top: -2px; right: 0; width: 1px; height: 10px; }
+        .overshoot-tr::after { top: 0; right: -2px; width: 10px; height: 1px; }
+        
+        .dot-grid {
+            background-image: radial-gradient(#191514 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        
+        .architect-shadow {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .architect-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px #191514;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+            letter-spacing: 0.02em;
+        }
+    </style>
+    <title>Growth Engineered to Inflect | AI Advisory</title>
+</head>
+<body class="bg-background text-deep-authority selection:bg-technical-sky/30">
+<!-- TopNavBar Shell -->
+<nav class="bg-background border-b-[0.5px] border-deep-authority/10 flex justify-between items-center w-full px-8 md:px-12 py-5 max-w-[1920px] mx-auto fixed top-0 z-50">
+    <div class="text-xl font-bold tracking-tighter uppercase font-mono text-deep-authority">
+        <a href="/v_stitch1">AI ADVISORY</a>
+    </div>
+    <div class="hidden md:flex items-center space-x-10">
+        <a class="text-deep-authority font-mono text-[12px] opacity-70 hover:text-strategic-action hover:opacity-100 transition-all duration-200 uppercase tracking-wider" href="/v_stitch1/perspectives">Perspectives</a>
+        <a class="text-deep-authority font-mono text-[12px] opacity-70 hover:text-strategic-action hover:opacity-100 transition-all duration-200 uppercase tracking-wider" href="/v_stitch1/intelligence">Intelligence</a>
+        <a class="text-deep-authority font-mono text-[12px] opacity-70 hover:text-strategic-action hover:opacity-100 transition-all duration-200 uppercase tracking-wider" href="#">Methodology</a>
+        <a class="text-deep-authority font-mono text-[12px] opacity-70 hover:text-strategic-action hover:opacity-100 transition-all duration-200 uppercase tracking-wider" href="#">Archive</a>
+    </div>
+    <button class="bg-deep-authority text-background px-6 py-2.5 font-mono text-[12px] uppercase tracking-wider architect-shadow rounded-none">
+        Contact Us
+    </button>
+</nav>
+
+<main class="pt-24 min-h-screen">
+    <!-- Hero Section: The Architect's Grid -->
+    <section class="relative px-8 md:px-12 py-20 md:py-32 grid grid-cols-12 gap-8 items-end border-b border-deep-authority/5">
+        <div class="absolute inset-0 dot-grid -z-10"></div>
+        <div class="col-span-12 md:col-span-8">
+            <div class="mb-8 flex items-center space-x-4">
+                <span class="font-mono text-[11px] text-technical-sky border border-technical-sky/30 px-3 py-1 uppercase tracking-[0.2em] font-bold">Master Plan v1.0.2</span>
+                <div class="h-[1px] w-20 bg-technical-sky/30"></div>
+            </div>
+            <h1 class="text-6xl md:text-8xl leading-[0.95] text-deep-authority font-bold tracking-tight">
+                Growth Engineered <br/>to Inflect.
+            </h1>
+        </div>
+        <div class="col-span-12 md:col-span-4 pb-4">
+            <p class="text-xl leading-relaxed max-w-sm text-deep-authority/80 italic font-serif">
+                Moving beyond automation into the era of intentional structural intelligence. We build the frameworks that define market leaders.
+            </p>
+            <div class="mt-10 flex space-x-6">
+                <div class="p-6 border-[0.5px] border-deep-authority/10 bg-background/50 technical-overshoot overshoot-tr flex-1">
+                    <span class="font-mono text-[10px] block mb-2 text-muted-gray uppercase tracking-widest font-bold">Efficiency Index</span>
+                    <span class="text-4xl font-bold tracking-tighter text-strategic-action">+142%</span>
+                </div>
+                <div class="p-6 border-[0.5px] border-deep-authority/10 bg-background/50 technical-overshoot overshoot-tr flex-1">
+                    <span class="font-mono text-[10px] block mb-2 text-muted-gray uppercase tracking-widest font-bold">Strategic Depth</span>
+                    <span class="text-4xl font-bold tracking-tighter text-technical-sky">Alpha-7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Strategic Grid -->
+    <section class="px-8 md:px-12 py-24 md:py-32 bg-background">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">The Blueprint.</h2>
+            <span class="font-mono text-[12px] text-muted-gray uppercase tracking-[0.3em] mt-4 md:mt-0 font-bold">Structural Components / 001 - 004</span>
+        </div>
+        <div class="grid grid-cols-12 gap-8">
+            <!-- Large Feature Card -->
+            <div class="col-span-12 md:col-span-7 bg-surface-container-high/30 p-10 md:p-14 technical-overshoot border border-deep-authority/5 min-h-[500px] flex flex-col justify-between group overflow-hidden">
+                <div>
+                    <span class="font-mono text-[12px] text-strategic-action font-bold uppercase tracking-widest">01 / Reasoning Engines</span>
+                    <h3 class="text-4xl md:text-5xl mt-8 max-w-md leading-tight">Decision architectures that anticipate market friction.</h3>
+                </div>
+                <div class="relative mt-12">
+                    <div class="absolute -bottom-20 -right-20 w-80 h-80 border-[0.5px] border-deep-authority/10 rotate-12 flex items-center justify-center opacity-40 group-hover:rotate-45 transition-transform duration-1000">
+                        <div class="w-60 h-60 border-[0.5px] border-technical-sky/40 -rotate-12"></div>
+                    </div>
+                    <p class="font-mono text-[12px] text-muted-gray max-w-xs uppercase tracking-widest leading-loose font-bold">
+                        Proprietary logic models designed for high-stakes governance and tactical capital allocation.
+                    </p>
+                </div>
+            </div>
+            <!-- Vertical Card -->
+            <div class="col-span-12 md:col-span-5 bg-technical-sky/5 p-10 md:p-14 border border-deep-authority/5 flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-6 font-mono text-[11px] text-technical-sky/60 tracking-widest uppercase font-bold">Fig. 4a // Sketch</div>
+                <img class="w-full grayscale mix-blend-multiply opacity-20 absolute inset-0 object-cover" alt="Abstract black and white geometric technical drawing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC50m0nS_slztsm0mK8rGsUe0kaoiihKxhWclC2pmX-_vxaBP5nrBHKSJzG3AMvId3_ww_zePBqC_sxNMWQNx9fEQaOUnklE3FON_5J13JodTAXKEG-qpTw_O83N8X90ltBNFQCqNMbWoWwDRLvK-VqrOSN6k0jD1PjEeLgjveFa3j55SFPwWbUfV8bBn8fRhM0pYYusPhPUzIR8ta5XAyzErS3hNo3akI1Vtp8G8iFRhuoApHIhQQVc1TVuIRv7ZqTdINmndEFC751"/>
+                <div class="relative z-10">
+                    <h3 class="text-4xl mb-6 tracking-tight">Operational Audits</h3>
+                    <p class="text-lg text-deep-authority/70 mb-10 leading-relaxed font-serif italic">Identifying latent inefficiencies within legacy system clusters through multi-vector analysis.</p>
+                    <button class="flex items-center space-x-4 text-deep-authority font-mono text-[12px] uppercase tracking-[0.2em] group font-bold">
+                        <span class="border-b border-deep-authority/20 pb-1">View Case Study</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Small Technical Block -->
+            <div class="col-span-12 md:col-span-4 bg-deep-authority text-background p-10 border border-deep-authority flex flex-col justify-between min-h-[320px] architect-shadow rounded-none">
+                <span class="font-mono text-[10px] uppercase tracking-[0.4em] opacity-40">Section 03 / Intelligence</span>
+                <h4 class="text-3xl italic font-normal leading-snug">Real-time risk mapping for global entities.</h4>
+                <span class="material-symbols-outlined text-strategic-action text-3xl">token</span>
+            </div>
+            <!-- Medium Feature Card -->
+            <div class="col-span-12 md:col-span-8 bg-surface-container-high/30 p-10 md:p-14 border border-deep-authority/5 flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2">
+                    <img class="w-full h-72 object-cover grayscale brightness-90 border border-deep-authority/10 rounded-lg" alt="Macro photo of server motherboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV0maNwxNgeki22IDN8SZoh8xoyL36XTsBl4LeRoS8HtpHpaHtaU0LxK3rVJwvIMIWpT1uhg5VCW0qoc09eh3RwFYL7jQr2ZxCW_Y__2z5RHiYOH97A7aeFNzhPNslZ6RZq4fP-_1UsqZqY8NsJnn80dEz0NdJbjCPoqVaSTbU9Hw4s596UXzMBZ1vmK54BCJKiIs2DlxI8u9NOjAHfk-lF1Z4LJ_g88t7y5RRs5G4MBGRz-LwCGdRv_JTLwY488faGkC-Ss2TBTBN"/>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <span class="font-mono text-[11px] text-technical-sky uppercase tracking-widest mb-4 block font-bold">System Status: Active</span>
+                    <h3 class="text-3xl md:text-4xl mb-6 tracking-tight">Methodology</h3>
+                    <p class="text-base text-deep-authority/60 leading-relaxed mb-8">
+                        A non-linear approach to growth engineering. We focus on the "Bones" of the business before the "Skin."
+                    </p>
+                    <div class="flex space-x-3">
+                        <div class="w-2.5 h-2.5 bg-strategic-action rounded-full"></div>
+                        <div class="w-2.5 h-2.5 bg-technical-sky rounded-full"></div>
+                        <div class="w-2.5 h-2.5 bg-muted-gray rounded-full opacity-30"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Annotation Section -->
+    <section class="px-8 md:px-12 py-24 md:py-32 bg-surface-container-high/20 grid grid-cols-12 gap-12 items-center border-y border-deep-authority/5">
+        <div class="col-span-12 md:col-span-5">
+            <div class="relative aspect-square w-full border border-deep-authority/10 overflow-hidden bg-background group rounded-xl">
+                <div class="absolute inset-0 dot-grid"></div>
+                <!-- Mock Hand-drawn Sketch Placeholder -->
+                <div class="absolute inset-0 flex items-center justify-center p-16">
+                    <div class="w-full h-full border-b-[2px] border-l-[2px] border-deep-authority/20 relative">
+                        <div class="absolute bottom-0 left-0 w-[80%] h-[60%] border-[1.5px] border-strategic-action border-dashed opacity-60"></div>
+                        <div class="absolute top-10 right-10 font-mono text-[11px] text-technical-sky rotate-12 tracking-widest font-bold">PROJECTED YIELD +12%</div>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 left-6 font-mono text-[10px] uppercase text-muted-gray tracking-widest font-bold">Sketch_092_Final.dwg</div>
+            </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 md:col-start-7">
+            <h2 class="text-5xl md:text-6xl font-bold mb-10 tracking-tight">Precise Humanism.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-5">
+                    <p class="font-mono text-[12px] text-technical-sky uppercase tracking-[0.3em] font-bold">01 / Intentional Design</p>
+                    <p class="text-lg text-deep-authority/70 leading-relaxed font-serif italic">
+                        We reject the default. Every component of our AI advisory is hand-tuned to the specific cultural and technical landscape of our clients.
+                    </p>
+                </div>
+                <div class="space-y-5">
+                    <p class="font-mono text-[12px] text-technical-sky uppercase tracking-[0.3em] font-bold">02 / Measured Impact</p>
+                    <p class="text-lg text-deep-authority/70 leading-relaxed font-serif italic">
+                        Success is not a graph going up. Success is the strengthening of structural foundations to withstand market volatility.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16">
+                <button class="px-12 py-5 bg-strategic-action text-background font-mono text-[12px] uppercase tracking-[0.3em] font-bold architect-shadow rounded-none">
+                    Begin Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating UI / Annotation Cluster -->
+    <section class="px-8 md:px-12 py-32 md:py-48 bg-background relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="font-mono text-[12px] text-muted-gray uppercase tracking-[0.5em] mb-12 block font-bold">Network Perspectives</span>
+            <h2 class="text-5xl md:text-7xl mb-16 italic font-normal leading-[1.1] text-deep-authority">"The architecture of tomorrow is being sketched today."</h2>
+            <div class="flex flex-wrap justify-center gap-12 mt-16 opacity-40 grayscale">
+                <span class="font-mono text-[11px] uppercase tracking-widest font-bold text-deep-authority">Gartner Analyst Group</span>
+                <span class="font-mono text-[11px] uppercase tracking-widest font-bold text-deep-authority">Forbes Strategic AI</span>
+                <span class="font-mono text-[11px] uppercase tracking-widest font-bold text-deep-authority">TechCrunch Disrupt</span>
+            </div>
+        </div>
+        <!-- Abstract background technical elements -->
+        <div class="absolute top-1/4 -left-20 w-96 h-[1px] bg-deep-authority/5 -rotate-45"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-[1px] bg-deep-authority/5 -rotate-45"></div>
+    </section>
+</main>
+
+<!-- Footer Shell -->
+<footer class="bg-background border-t-4 border-deep-authority mt-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-12 py-20 w-full max-w-[1920px] mx-auto border-x border-deep-authority/5">
+        <div class="col-span-1 space-y-10">
+            <div class="text-sm font-black tracking-[0.3em] text-deep-authority uppercase font-mono">
+                AI ADVISORY
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.2em] leading-relaxed text-muted-gray max-w-[240px] font-bold">
+                A strategic collective focused on the intersection of human judgment and synthetic intelligence.
+            </p>
+        </div>
+        <div class="col-span-1">
+            <p class="font-mono text-[12px] uppercase tracking-[0.3em] mb-8 font-bold text-deep-authority">Services</p>
+            <ul class="space-y-4">
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Strategic Services</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Technical Audits</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Operational AI</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Governance</a></li>
+            </ul>
+        </div>
+        <div class="col-span-1">
+            <p class="font-mono text-[12px] uppercase tracking-[0.3em] mb-8 font-bold text-deep-authority">Resource</p>
+            <ul class="space-y-4">
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Whitepapers</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Case Studies</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">System Status</a></li>
+                <li><a class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-gray hover:text-technical-sky transition-colors font-bold" href="#">Privacy Index</a></li>
+            </ul>
+        </div>
+        <div class="col-span-1 flex flex-col justify-between">
+            <div>
+                <p class="font-mono text-[12px] uppercase tracking-[0.3em] mb-8 font-bold text-deep-authority">Newsletter</p>
+                <div class="relative border-b border-deep-authority/20 pb-3 flex justify-between items-center">
+                    <input class="bg-transparent border-none font-mono text-[11px] w-full focus:ring-0 placeholder:text-deep-authority/30 uppercase tracking-widest font-bold" placeholder="Identity @ Domain.com" type="text"/>
+                    <span class="material-symbols-outlined text-sm text-strategic-action">north_east</span>
+                </div>
+            </div>
+            <div class="mt-12 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-gray leading-loose font-bold">
+                © 2024 AI ADVISORY. Architectural Master Plan v1.0.2 / All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

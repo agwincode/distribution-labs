@@ -1,0 +1,154 @@
+---
+---
+
+<section class="value-props">
+	<div class="container">
+
+		<p class="section-label reveal">— WHY WORK WITH US</p>
+
+		<div class="props-grid">
+
+			<!-- 01 — We Win Together -->
+			<div class="prop reveal">
+				<div class="prop-icon" aria-hidden="true">
+					<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<!-- Two lines converging upward — shared apex -->
+						<line x1="5" y1="30" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<line x1="31" y1="30" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<!-- Small dot at apex -->
+						<circle cx="18" cy="8" r="1.75" fill="currentColor"/>
+					</svg>
+				</div>
+				<h3 class="prop-headline">We Win Together</h3>
+				<p class="prop-body">
+					We work for cash and carry. When your valuation moves, so does ours. That's not a tagline — it's the only model that keeps an advisor honest.
+				</p>
+			</div>
+
+			<!-- 02 — The Market Isn't Waiting -->
+			<div class="prop reveal">
+				<div class="prop-icon" aria-hidden="true">
+					<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<!-- Diagonal momentum arrow -->
+						<line x1="5" y1="28" x2="28" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<!-- Arrowhead -->
+						<line x1="28" y1="8" x2="16" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<line x1="28" y1="8" x2="28" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+					</svg>
+				</div>
+				<h3 class="prop-headline">The Market Isn't Waiting</h3>
+				<p class="prop-body">
+					The market is writing your story right now, whether you are or not. Fast-growing companies can't afford to miss a quarter — and a blurry narrative is how quarters get missed.
+				</p>
+			</div>
+
+			<!-- 03 — Built Where You're Building -->
+			<div class="prop reveal">
+				<div class="prop-icon" aria-hidden="true">
+					<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<!-- Schematic lines — blueprint aesthetic -->
+						<line x1="5" y1="12" x2="31" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<line x1="5" y1="19" x2="24" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						<line x1="5" y1="26" x2="17" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+					</svg>
+				</div>
+				<h3 class="prop-headline">Built Where You're Building</h3>
+				<p class="prop-body">
+					We come from companies that scaled through exactly the stages you're in. We know the playbooks — and more importantly, we know when to throw them out.
+				</p>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<style>
+	.value-props {
+		background: var(--green-dark);
+		padding: 7rem 0 8rem;
+	}
+
+	.section-label {
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.28em;
+		color: rgba(237, 236, 227, 0.4);
+		margin-bottom: 4rem;
+	}
+
+	.props-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+		border-top: 1px solid rgba(237, 236, 227, 0.1);
+	}
+
+	.prop {
+		padding: 3rem 3rem 3rem 0;
+		border-right: 1px solid rgba(237, 236, 227, 0.1);
+	}
+
+	.prop:first-child {
+		padding-left: 0;
+	}
+
+	.prop:not(:first-child) {
+		padding-left: 3rem;
+	}
+
+	.prop:last-child {
+		border-right: none;
+		padding-right: 0;
+	}
+
+	/* Icon */
+	.prop-icon {
+		color: var(--orange);
+		margin-bottom: 2rem;
+		display: block;
+	}
+
+	/* Headline */
+	.prop-headline {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: clamp(1.5rem, 2vw, 1.85rem);
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		color: var(--white);
+		margin: 0 0 1.25rem;
+	}
+
+	/* Body */
+	.prop-body {
+		font-family: var(--font-body);
+		font-size: 0.88rem;
+		font-weight: 400;
+		color: rgba(237, 236, 227, 0.55);
+		line-height: 1.75;
+		margin: 0;
+	}
+
+	/* ── Responsive ──────────────────────────── */
+	@media (max-width: 480px) {
+		.props-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.prop,
+		.prop:not(:first-child),
+		.prop:last-child {
+			padding: 2.75rem 0;
+			border-right: none;
+			border-bottom: 1px solid rgba(237, 236, 227, 0.1);
+		}
+
+		.prop:last-child {
+			border-bottom: none;
+		}
+
+		.value-props { padding: 5rem 0 6rem; }
+	}
+</style>

@@ -11,21 +11,21 @@
 			<div class="service reveal">
 				<h3 class="service-name">Positioning</h3>
 				<p class="service-desc">
-					Find the version of your story that's impossible to ignore — then put it in the rooms that change outcomes.
+					Find the version of your story that's impossible to ignore, then put it in the rooms that change outcomes.
 				</p>
 			</div>
 
 			<div class="service reveal">
 				<h3 class="service-name">Growth Strategy</h3>
 				<p class="service-desc">
-					Funnels, paid, channels — the moves that actually change the number. Built from evidence, not playbooks.
+					Funnels, paid, channels: the moves that actually change the number. Built from evidence, not playbooks.
 				</p>
 			</div>
 
 			<div class="service reveal">
 				<h3 class="service-name">Fractional CMO</h3>
 				<p class="service-desc">
-					Keep your marketing velocity when there's a gap in leadership. We've run the team — we can hold the line.
+					Senior marketing leadership on day one. No six-month search, no equity, no ramp time. We run the function at full speed and hand off cleanly when you're ready.
 				</p>
 			</div>
 
@@ -37,7 +37,7 @@
 <style>
 	.services {
 		background: var(--white);
-		padding: 7rem 0 8rem;
+		padding: 4rem 0 5rem;
 	}
 
 	.section-label {
@@ -62,42 +62,32 @@
 		border-right: 1px solid var(--border-light);
 	}
 
-	.service:first-child {
-		padding-left: 0;
-	}
-
-	.service:not(:first-child) {
-		padding-left: 3rem;
-	}
-
-	.service:last-child {
-		border-right: none;
-		padding-right: 0;
-	}
+	.service:first-child { padding-left: 0; }
+	.service:not(:first-child) { padding-left: 3rem; }
+	.service:last-child { border-right: none; padding-right: 0; }
 
 	.service-name {
-		font-family: var(--font-display);
+		font-family: var(--font-headline);
 		font-weight: 700;
-		font-size: clamp(1.4rem, 2vw, 1.7rem);
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-		line-height: 1;
+		font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+		line-height: 1.1;
+		letter-spacing: -0.01em;
 		color: var(--black);
-		margin: 0 0 1.25rem;
+		margin: 0 0 1rem;
 	}
 
 	.service-desc {
 		font-family: var(--font-body);
 		font-size: 0.88rem;
 		font-weight: 400;
-		color: rgba(25, 21, 20, 0.55);
+		color: rgba(25, 21, 20, 0.72);
 		line-height: 1.75;
 		margin: 0;
 	}
 
 	/* ── Responsive ───────────────────────────── */
 	@media (max-width: 768px) {
-		.services { padding: 5rem 0 6rem; }
+		.services { padding: 3rem 0 4rem; }
 		.services-grid { grid-template-columns: 1fr; }
 
 		.service,

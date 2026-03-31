@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Astro Dev",
+      "runtimeExecutable": "/Users/angela/.nvm/versions/node/v20.20.2/bin/node",
+      "runtimeArgs": ["serve.mjs"],
+      "port": 4321,
+      "cwd": "/Users/angela/Desktop/distribution-labs"
+    }
+  ]
+}

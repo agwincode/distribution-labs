@@ -16,18 +16,18 @@
 
 		<div class="hero-body reveal">
 
-			<p class="eyebrow">— GROWTH ADVISORY FOR FOUNDERS</p>
+			<p class="eyebrow">GROWTH ADVISORY FOR FOUNDERS</p>
 
 			<h1 class="display-h1">
-				<span class="line line-1">OWN THE</span>
-				<span class="line line-2">CATEGORY</span>
-				<span class="line line-3">BEFORE <em>SOMEONE</em></span>
-				<span class="line line-4"><em>ELSE DOES.</em></span>
+				<span class="line line-1">Own the</span>
+				<span class="line line-2">category</span>
+				<span class="line line-3">before <em>someone</em></span>
+				<span class="line line-4"><em>else does.</em></span>
 			</h1>
 
 			<p class="hero-sub">
 				We help growth-stage founders build the marketing engine
-				that wins the market — before a competitor does it first.
+				that wins the market... before a competitor does it first.
 			</p>
 
 			<a href="#team" class="hero-cta">
@@ -52,6 +52,17 @@
 		background: var(--white);
 		position: relative;
 		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url('/trees.jpg');
+		background-size: cover;
+		background-position: center 30%;
+		opacity: 0.18;
+		z-index: 0;
 	}
 
 	.container { position: relative; z-index: 1; }
@@ -81,7 +92,7 @@
 	.nav-link {
 		font-family: var(--font-body);
 		font-size: 0.8rem;
-		color: rgba(25, 21, 20, 0.45);
+		color: var(--black);
 		text-decoration: none;
 		letter-spacing: 0.05em;
 		transition: color 0.2s;
@@ -115,19 +126,18 @@
 		font-family: var(--font-display);
 		font-size: 0.72rem;
 		letter-spacing: 0.3em;
-		color: rgba(25, 21, 20, 0.4);
+		color: var(--sky);
 		margin-bottom: 2.5rem;
-		font-weight: 400;
+		font-weight: 700;
 	}
 
-	/* Massive condensed headline */
+	/* Headline */
 	.display-h1 {
-		font-family: var(--font-display);
-		font-weight: 900;
-		font-size: clamp(5.5rem, 11vw, 9.5rem);
-		line-height: 0.91;
-		letter-spacing: -0.01em;
-		text-transform: uppercase;
+		font-family: var(--font-headline);
+		font-weight: 700;
+		font-size: clamp(3rem, 5vw, 5rem);
+		line-height: 1.0;
+		letter-spacing: -0.02em;
 		margin: 0 0 4rem;
 		color: var(--black);
 		display: flex;
@@ -150,7 +160,7 @@
 		font-family: var(--font-body);
 		font-size: 1rem;
 		font-weight: 400;
-		color: rgba(25, 21, 20, 0.5);
+		color: rgba(25, 21, 20, 0.72);
 		line-height: 1.7;
 		max-width: 440px;
 		margin-bottom: 3.5rem;

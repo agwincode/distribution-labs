@@ -1,0 +1,27 @@
+---
+import LayoutV2 from '../../layouts/LayoutV2.astro';
+import DashboardNav from '../../components/v2/DashboardNav.astro';
+import HeroV2 from '../../components/v2/HeroV2.astro';
+import LogosV2 from '../../components/v2/LogosV2.astro';
+import OfferingsV2 from '../../components/v2/OfferingsV2.astro';
+---
+
+<LayoutV2 title="Distribution Labs v2 | Systems Thinking">
+	<DashboardNav />
+	<main>
+		<HeroV2 />
+		<LogosV2 />
+		<OfferingsV2 />
+		
+		<!-- About Section -->
+		<section id="about" style="padding: 10rem 0; background: var(--bg-off-white);">
+			<div class="container">
+				<div class="reveal">
+					<p class="badge-v2">03_PARTNERSHIP</p>
+					<h2 class="serif-h2" style="max-width: 800px;">Partnering with Founders, <span class="text-highlight">Not Consulting for Them.</span></h2>
+					<p class="hero-sub">We are operators who provide the technical infrastructure to tell your story at scale. We've been in the trenches from Series A through C.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</LayoutV2>

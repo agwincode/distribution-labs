@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/',
   vite: {
     optimizeDeps: {
-      exclude: ['xxhash-wasm', '@astrojs/compiler'],
+      exclude: ['xxhash-wasm'],
     },
   },
 });

@@ -6,7 +6,7 @@
 
 		<header class="eng-header reveal">
 			<p class="section-label">THE ENGAGEMENTS</p>
-			<h2 class="eng-h2">Four ways to work together.</h2>
+			<h2 class="eng-h2">Built for where you are.</h2>
 		</header>
 
 		<div class="engagement-list">
@@ -19,20 +19,16 @@
 				<div class="row-body">
 					<div class="row-title-line">
 						<h3 class="eng-name">Founder Storytelling</h3>
-						<span class="eng-duration">2–4 WEEKS</span>
 					</div>
 					<p class="eng-desc">
 						You know what you're building. Getting the market to believe it is a different problem.
 						We find the version of your story that's impossible to copy, then put it in the rooms
 						that change outcomes.
 					</p>
-					<div class="eng-outputs">
-						<span class="outputs-label">OUTPUTS</span>
-						<ul>
-							<li>Founder story ready for investors, press, recruiting, and customers</li>
-							<li>Channel strategy built around where your buyers actually pay attention</li>
-						</ul>
-					</div>
+					<ul class="eng-outputs">
+						<li>Founder story ready for investors, press, recruiting, and customers</li>
+						<li>Channel strategy built around where your buyers actually pay attention</li>
+					</ul>
 					<a href="#contact" class="eng-link">Start Story →</a>
 				</div>
 			</div>
@@ -45,21 +41,17 @@
 				<div class="row-body">
 					<div class="row-title-line">
 						<h3 class="eng-name">Positioning Sprint</h3>
-						<span class="eng-duration">2–5 WEEKS</span>
 					</div>
 					<p class="eng-desc">
 						You're losing deals you should be winning. Usually it's not the product.
 						We interview your customers and your losses, then build positioning
 						from the evidence up.
 					</p>
-					<div class="eng-outputs">
-						<span class="outputs-label">OUTPUTS</span>
-						<ul>
-							<li>Positioning deck built from customer interviews and win/loss data</li>
-							<li>First call deck that closes the gap between interest and next meeting</li>
-							<li>Homepage blueprint that converts the right visitors</li>
-						</ul>
-					</div>
+					<ul class="eng-outputs">
+						<li>Positioning deck built from customer interviews and win/loss data</li>
+						<li>First call deck that closes the gap between interest and next meeting</li>
+						<li>Homepage blueprint that converts the right visitors</li>
+					</ul>
 					<a href="#contact" class="eng-link">Start Positioning →</a>
 				</div>
 			</div>
@@ -72,21 +64,17 @@
 				<div class="row-body">
 					<div class="row-title-line">
 						<h3 class="eng-name">The Growth Protocol</h3>
-						<span class="eng-duration">6–8 WEEKS</span>
 					</div>
 					<p class="eng-desc">
 						Growth is slower than the board expects and you know something is blocking it.
 						We find it, name it, and build the 90-day plan around the moves that will
 						actually change the number.
 					</p>
-					<div class="eng-outputs">
-						<span class="outputs-label">OUTPUTS</span>
-						<ul>
-							<li>Diagnostic memo showing exactly where deals stall and why</li>
-							<li>90-day roadmap with three to five prioritized moves</li>
-							<li>Your next hire identified by the bottleneck it solves</li>
-						</ul>
-					</div>
+					<ul class="eng-outputs">
+						<li>Diagnostic memo showing exactly where deals stall and why</li>
+						<li>90-day roadmap with three to five prioritized moves</li>
+						<li>Your next hire identified by the bottleneck it solves</li>
+					</ul>
 					<a href="#contact" class="eng-link">Start Protocol →</a>
 				</div>
 			</div>
@@ -99,20 +87,16 @@
 				<div class="row-body">
 					<div class="row-title-line">
 						<h3 class="eng-name">Marketing Systems</h3>
-						<span class="eng-duration">2–4 MONTHS</span>
 					</div>
 					<p class="eng-desc">
 						Your team spends most of their time on execution and not enough on the work
 						that moves the number. We build the systems that change that ratio.
 					</p>
-					<div class="eng-outputs">
-						<span class="outputs-label">OUTPUTS</span>
-						<ul>
-							<li>Custom workflows built around your team's actual workload</li>
-							<li>A clear framework for where systems run and where your team leads</li>
-							<li>Onboarding that drives real adoption, not shelf life</li>
-						</ul>
-					</div>
+					<ul class="eng-outputs">
+						<li>Custom workflows built around your team's actual workload</li>
+						<li>A clear framework for where systems run and where your team leads</li>
+						<li>Onboarding that drives real adoption, not shelf life</li>
+					</ul>
 					<a href="#contact" class="eng-link">Start Systems →</a>
 				</div>
 			</div>
@@ -121,27 +105,10 @@
 	</div>
 </section>
 
-<script>
-	// Stagger rows on scroll
-	const listEl = document.querySelector('.engagement-list');
-	if (listEl) {
-		const rowObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.querySelectorAll('.engagement-row').forEach((row, i) => {
-						setTimeout(() => (row as HTMLElement).style.opacity = '1', i * 110);
-					});
-					rowObserver.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.05 });
-		rowObserver.observe(listEl);
-	}
-</script>
 
 <style>
 	.engagements {
-		background: var(--black);
+		background: var(--white);
 		padding: 7rem 0 8rem;
 	}
 
@@ -167,12 +134,12 @@
 		line-height: 0.95;
 		letter-spacing: -0.01em;
 		margin: 0;
-		color: var(--white);
+		color: var(--black);
 	}
 
 	/* ── Engagement list ──────────────────────── */
 	.engagement-list {
-		border-top: 1px solid var(--border);
+		border-top: 1px solid rgba(25, 21, 20, 0.12);
 	}
 
 	.engagement-row {
@@ -180,10 +147,14 @@
 		grid-template-columns: 100px 1fr;
 		gap: 0 3.5rem;
 		padding: 3.5rem 0;
-		border-bottom: 1px solid var(--border);
+		border-bottom: 1px solid rgba(25, 21, 20, 0.12);
 		align-items: start;
 		opacity: 0;
 		transition: opacity 0.6s ease;
+	}
+
+	.engagement-row.active {
+		opacity: 1;
 	}
 
 	/* Row number */
@@ -196,21 +167,21 @@
 		font-weight: 900;
 		font-size: 2.8rem;
 		line-height: 1;
-		color: var(--border);
+		color: rgba(25, 21, 20, 0.1);
 		letter-spacing: -0.03em;
 		display: block;
 		transition: color 0.3s;
 	}
 
 	.engagement-row:hover .row-num {
-		color: rgba(255, 84, 2, 0.35);
+		color: rgba(255, 84, 2, 0.3);
 	}
 
 	/* Row content */
 	.row-title-line {
 		display: flex;
 		align-items: baseline;
-		gap: 1.5rem;
+		gap: 1.25rem;
 		margin-bottom: 1.25rem;
 		flex-wrap: wrap;
 	}
@@ -223,64 +194,34 @@
 		letter-spacing: 0.02em;
 		line-height: 1;
 		margin: 0;
-		color: var(--white);
-	}
-
-	.eng-duration {
-		font-family: var(--font-display);
-		font-size: 0.6rem;
-		font-weight: 700;
-		letter-spacing: 0.22em;
-		color: var(--sky);
-		border: 1px solid rgba(162, 161, 248, 0.22);
-		padding: 0.22rem 0.55rem;
-		white-space: nowrap;
+		color: var(--black);
 	}
 
 	.eng-desc {
 		font-family: var(--font-body);
 		font-size: 0.9rem;
 		font-weight: 400;
-		color: var(--muted);
+		color: rgba(25, 21, 20, 0.6);
 		line-height: 1.7;
 		max-width: 580px;
-		margin-bottom: 1.75rem;
+		margin-bottom: 1.5rem;
 	}
 
-	/* Outputs inline */
+	/* Output list — clean, no label */
 	.eng-outputs {
-		display: flex;
-		align-items: baseline;
-		gap: 1.5rem;
-		margin-bottom: 2rem;
-		flex-wrap: wrap;
-	}
-
-	.outputs-label {
-		font-family: var(--font-display);
-		font-size: 0.58rem;
-		font-weight: 700;
-		letter-spacing: 0.2em;
-		color: var(--muted);
-		opacity: 0.55;
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-
-	.eng-outputs ul {
 		list-style: none;
 		padding: 0;
-		margin: 0;
+		margin: 0 0 2rem;
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.3rem 2rem;
+		flex-direction: column;
+		gap: 0.4rem;
 	}
 
 	.eng-outputs li {
 		font-family: var(--font-body);
 		font-size: 0.8rem;
 		font-weight: 400;
-		color: rgba(237, 236, 227, 0.6);
+		color: rgba(25, 21, 20, 0.45);
 		line-height: 1.6;
 		position: relative;
 		padding-left: 1rem;
@@ -291,7 +232,7 @@
 		position: absolute;
 		left: 0;
 		color: var(--orange);
-		opacity: 0.5;
+		opacity: 0.6;
 	}
 
 	/* CTA link */
@@ -301,7 +242,7 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
-		color: var(--white);
+		color: var(--black);
 		text-decoration: none;
 		border-bottom: 1px solid rgba(255, 84, 2, 0.45);
 		padding-bottom: 2px;
@@ -330,6 +271,5 @@
 			padding: 2.5rem 0;
 		}
 		.row-num { font-size: 1.5rem; }
-		.eng-outputs { flex-direction: column; gap: 0.75rem; }
 	}
 </style>

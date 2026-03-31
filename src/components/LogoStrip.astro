@@ -3,37 +3,24 @@
 
 <section class="logo-strip reveal">
 	<div class="container">
-
 		<p class="strip-label">WHERE WE'VE BUILT</p>
-
 		<div class="logo-row">
-			<div class="logo-item">
-				<img src="https://www.vectorlogo.zone/logos/asana/asana-ar21.svg" alt="Asana" class="logo-img" />
-			</div>
-			<div class="logo-item">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Carta-logo.svg" alt="Carta" class="logo-img" />
-			</div>
-			<div class="logo-item">
-				<img src="https://www.vectorlogo.zone/logos/dropbox/dropbox-ar21.svg" alt="Dropbox" class="logo-img" />
-			</div>
-			<div class="logo-item">
-				<img src="/logos/descript.svg" alt="Descript" class="logo-img" />
-			</div>
-			<div class="logo-item">
-				<img src="/logos/opensea.svg" alt="OpenSea" class="logo-img" />
-			</div>
+			<img src="/logos/carta.svg"     alt="Carta"                  class="logo logo-md" />
+			<img src="/logos/asana.svg"     alt="Asana"                  class="logo logo-lg" />
+			<img src="/logos/descript.svg"  alt="Descript"               class="logo logo-icon" />
+			<img src="/logos/opensea.svg"   alt="OpenSea"                class="logo logo-icon" />
+			<img src="/logos/dropbox.svg"   alt="Dropbox"                class="logo logo-xl" />
+			<img src="/logos/invisible.svg" alt="Invisible Technologies" class="logo" />
 		</div>
-
-		<p class="strip-sub">The team that built marketing orgs at Asana, Dropbox, Carta, and more.</p>
-
 	</div>
 </section>
 
 <style>
-	/* ── Light section — stark contrast with dark hero ── */
 	.logo-strip {
-		background: var(--white);
-		padding: 5.5rem 0;
+		background: var(--black);
+		padding: 4rem 0 5rem;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.strip-label {
@@ -41,51 +28,40 @@
 		font-size: 0.65rem;
 		font-weight: 700;
 		letter-spacing: 0.28em;
-		color: var(--muted);
-		text-align: center;
-		margin-bottom: 3.5rem;
+		color: var(--orange);
+		text-align: left;
+		margin-bottom: 2.5rem;
 	}
 
 	.logo-row {
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		gap: 5rem;
+		justify-content: space-between;
 		flex-wrap: wrap;
-		margin-bottom: 3.5rem;
+		gap: 2rem;
 	}
 
-	.logo-item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	/* On light bg: brightness(0) renders logos as solid black */
-	.logo-img {
-		height: 36px;
+	.logo {
+		height: 22px;
 		width: auto;
-		max-width: 140px;
-		filter: brightness(0);
-		opacity: 0.55;
-		transition: opacity 0.25s;
-		object-fit: contain;
+		opacity: 0.4;
+		filter: brightness(0) invert(1);
+		transition: opacity 0.3s;
 	}
-	.logo-img:hover { opacity: 0.85; }
 
-	.strip-sub {
-		font-family: var(--font-body);
-		font-size: 0.875rem;
-		font-weight: 400;
-		color: #7a6a70;
-		text-align: center;
-		margin: 0;
-		letter-spacing: 0.01em;
-	}
+	/* Icon-only marks get taller so their visual weight matches wordmarks */
+	.logo-icon { height: 36px; }
+	.logo-icon.opensea { height: 40px; }
+	/* Wordmarks that need a bit more presence */
+	.logo-md { height: 31px; }   /* carta +20%+20% */
+	.logo-lg { height: 38px; }   /* asana +30%+30% */
+	.logo-xl { height: 46px; }   /* dropbox +30%+20%+30% */
+
+	.logo:hover { opacity: 0.75; }
 
 	@media (max-width: 768px) {
-		.logo-strip { padding: 4rem 0; }
-		.logo-row { gap: 2.5rem 3.5rem; }
-		.logo-img { height: 28px; }
+		.logo-row { justify-content: flex-start; gap: 2rem 2.5rem; }
+		.logo { height: 18px; }
+		.logo-icon { height: 28px; }
 	}
 </style>

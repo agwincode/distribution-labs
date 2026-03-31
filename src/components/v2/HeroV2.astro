@@ -1,0 +1,237 @@
+---
+---
+
+<section id="hero" class="hero-v2">
+	<div class="container hero-split">
+		<div class="hero-content">
+			<div class="badge-v2 reveal">01_SYSTEMS THINKING</div>
+			<h1 class="serif-h1 reveal">Supporting founders to <span class="text-highlight">tell their story.</span></h1>
+			<p class="hero-sub reveal">
+				AI-enabled marketing advisory for Series A through C founders. 
+				We turn your raw perspective into a precision-engineered distribution engine.
+			</p>
+			<div class="hero-actions reveal">
+				<button class="btn-primary">View Matrix</button>
+				<button class="btn-secondary">The Approach</button>
+			</div>
+		</div>
+
+		<div class="hero-visual reveal">
+			<div class="visual-container">
+				<!-- The Physics System -->
+				<svg viewBox="0 0 400 600" class="physics-svg" id="hero-svg">
+					<defs>
+						<!-- Charcoal Filter -->
+						<filter id="charcoal">
+							<feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise" />
+							<feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+						</filter>
+					</defs>
+
+					<!-- The Strategy Divider (The Snap Line) -->
+					<line x1="50" y1="300" x2="350" y2="300" stroke="var(--p-gray)" stroke-width="1" stroke-dasharray="8 4" />
+					<text x="360" y="305" class="svg-label">STRATEGIC_THRESHOLD</text>
+
+					<!-- The Distribution Grid (Faint) -->
+					<g class="distro-grid">
+						<circle cx="200" cy="450" r="2" fill="var(--border-light)" />
+						<circle cx="250" cy="450" r="2" fill="var(--border-light)" />
+						<circle cx="150" cy="450" r="2" fill="var(--border-light)" />
+						<circle cx="200" cy="500" r="2" fill="var(--border-light)" />
+					</g>
+
+					<!-- The Founder's Vision (Moving Ball) -->
+					<circle id="vision-ball" cx="200" cy="100" r="45" fill="var(--p-brown)" filter="url(#charcoal)" />
+					
+					<!-- Burst Units (Initially hidden) -->
+					<g id="burst-units" opacity="0">
+						<rect x="190" y="310" width="20" height="20" fill="var(--p-orange)" rx="4" />
+						<rect x="150" y="340" width="20" height="20" fill="var(--p-orange)" rx="4" />
+						<rect x="230" y="340" width="20" height="20" fill="var(--p-orange)" rx="4" />
+						<rect x="190" y="380" width="20" height="20" fill="var(--p-orange)" rx="4" />
+					</g>
+				</svg>
+
+				<!-- Windowed Video Background (Tactile Texture) -->
+				<div class="windowed-video">
+					<video autoplay muted loop playsinline class="tactile-video">
+						<source src="https://assets.mixkit.co/videos/preview/mixkit-ink-in-water-being-swirled-around-and-mixed-1135-large.mp4" type="video/mp4">
+					</video>
+					<div class="video-overlay"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const ball = document.getElementById('vision-ball');
+	const burst = document.getElementById('burst-units');
+	const heroSection = document.querySelector('.hero-v2');
+
+	window.addEventListener('scroll', () => {
+		if (!ball || !heroSection || !burst) return;
+		
+		const rect = heroSection.getBoundingClientRect();
+		const scrollStart = 0;
+		const scrollEnd = window.innerHeight;
+		const progress = Math.min(Math.max((window.scrollY - rect.top) / scrollEnd, 0), 1);
+
+		// Ball Physics
+		const targetY = 100 + (progress * 400); // Moves from 100 to 500
+		ball.setAttribute('cy', targetY.toString());
+
+		// The Snap Moment (at 300px mark)
+		if (targetY >= 300) {
+			ball.setAttribute('filter', 'none');
+			ball.setAttribute('fill', 'var(--p-orange)');
+			ball.setAttribute('r', '35'); // Compresses on impact
+			burst.style.opacity = "1";
+			burst.style.transform = `translateY(${(targetY - 300) * 0.5}px) scale(${1 + (targetY - 300) * 0.005})`;
+		} else {
+			ball.setAttribute('filter', 'url(#charcoal)');
+			ball.setAttribute('fill', 'var(--p-brown)');
+			ball.setAttribute('r', '45');
+			burst.style.opacity = "0";
+		}
+	});
+</script>
+
+<style>
+	.hero-v2 {
+		min-height: 120vh;
+		padding-top: 10rem;
+		background: var(--bg-off-white);
+		position: relative;
+	}
+
+	.hero-split {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+
+	.badge-v2 {
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.2rem;
+		color: var(--p-orange);
+		margin-bottom: 2rem;
+	}
+
+	.serif-h1 {
+		font-size: 5rem;
+		line-height: 1.05;
+		margin-bottom: 2.5rem;
+		color: var(--fg-warm-black);
+	}
+
+	.hero-sub {
+		font-family: var(--font-serif);
+		font-size: 1.6rem;
+		color: var(--p-gray);
+		line-height: 1.4;
+		max-width: 600px;
+		margin-bottom: 4rem;
+		font-style: italic;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.btn-primary {
+		background: var(--p-orange);
+		color: #FFF;
+		border: none;
+		padding: 1rem 2rem;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: var(--fg-warm-black);
+		border: 1px solid var(--border-light);
+		padding: 1rem 2rem;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(230, 107, 61, 0.2); }
+	.btn-secondary:hover { background: rgba(0,0,0,0.02); }
+
+	/* Visual Container */
+	.visual-container {
+		position: sticky;
+		top: 15rem;
+		width: 100%;
+		height: 600px;
+		background: #FFF;
+		border: 1px solid var(--border-light);
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+	}
+
+	.physics-svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+
+	.svg-label {
+		font-size: 10px;
+		font-family: var(--font-sans);
+		fill: var(--p-gray);
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	.windowed-video {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.tactile-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.3;
+		filter: grayscale(1);
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, transparent, #FFF 90%);
+	}
+
+	@media (max-width: 1100px) {
+		.serif-h1 { font-size: 3.5rem; }
+		.hero-split { grid-template-columns: 1fr; gap: 6rem; }
+		.hero-visual { display: none; }
+	}
+</style>

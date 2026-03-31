@@ -1,0 +1,147 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title, 
+	description = "Distribution Labs - Expert Marketing Advisory for Series A–C" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body class="v2-body">
+		<!-- The Strategic Grid Background -->
+		<div class="system-grid"></div>
+
+		<slot />
+
+		<script>
+			// Scroll Tracking for System Status
+			window.addEventListener('scroll', () => {
+				const scrollPercent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+				document.body.style.setProperty('--scroll-percent', scrollPercent.toString());
+				document.body.style.setProperty('--scroll-y', window.pageYOffset.toString());
+			});
+
+			// Reveal Animation Logic
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+					}
+				});
+			}, { threshold: 0.15 });
+
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		/* Brand Palette (Source: BRAND.md) */
+		--bg-off-white: #F5F5F0;
+		--fg-warm-black: #12100E;
+		--p-orange: #E66B3D;
+		--p-sky: #B4B8F0;
+		--p-gray: #94918C;
+		--p-brown: #633324;
+		
+		/* System Constraints */
+		--font-serif: 'Instrument Serif', serif;
+		--font-sans: 'Instrument Sans', sans-serif;
+		--border-light: rgba(18, 16, 14, 0.08);
+		--radius-standard: 12px;
+		
+		--scroll-percent: 0;
+		--scroll-y: 0;
+	}
+
+	* { box-sizing: border-box; }
+
+	.v2-body {
+		background: var(--bg-off-white);
+		color: var(--fg-warm-black);
+		font-family: var(--font-sans);
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1.5;
+	}
+
+	/* The Drafting Grid */
+	.system-grid {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: 
+			linear-gradient(to right, var(--border-light) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--border-light) 1px, transparent 1px);
+		background-size: 80px 80px;
+		z-index: -1;
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+	.container {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; margin: 0; }
+
+	/* Global Text Utilities */
+	.text-highlight {
+		position: relative;
+		display: inline-block;
+	}
+	.text-highlight::after {
+		content: "";
+		position: absolute;
+		bottom: 4px;
+		left: 0;
+		width: 100%;
+		height: 12px;
+		background: var(--p-orange);
+		opacity: 0.15;
+		z-index: -1;
+		transform: skewX(-15deg);
+	}
+
+	.text-underline {
+		border-bottom: 2px solid var(--p-orange);
+		padding-bottom: 2px;
+	}
+
+	/* Reveal Classes */
+	.reveal {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.reveal.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@media (max-width: 768px) {
+		.container { padding: 0 1.25rem; }
+	}
+</style>

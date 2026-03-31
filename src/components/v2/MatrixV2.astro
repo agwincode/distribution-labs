@@ -1,0 +1,200 @@
+---
+---
+
+<section id="matrix" class="matrix-section">
+	<div class="container">
+		<div class="matrix-header reveal">
+			<p class="badge-v2">02_THE COORDINATE SYSTEM</p>
+			<h2 class="serif-h2">The Strategic <span class="text-underline">Advisory Matrix.</span></h2>
+			<p class="matrix-sub">We don't provide templates. We provide intersections of Narrative and Velocity.</p>
+		</div>
+
+		<div class="matrix-container reveal">
+			<!-- Axis Labels -->
+			<div class="axis-y">VELOCITY_ENGINE</div>
+			<div class="axis-x">STRATEGIC_NARRATIVE</div>
+
+			<div class="matrix-grid">
+				<!-- Intersection Points -->
+				<div class="matrix-point" style="top: 20%; left: 30%;" data-service="Founder Storytelling">
+					<div class="point-glow"></div>
+					<div class="point-label">01_STORY</div>
+				</div>
+				<div class="matrix-point" style="top: 40%; left: 70%;" data-service="AI-Enabled Positioning">
+					<div class="point-glow"></div>
+					<div class="point-label">02_POSITIONING</div>
+				</div>
+				<div class="matrix-point" style="top: 70%; left: 50%;" data-service="The Growth Protocol">
+					<div class="point-glow"></div>
+					<div class="point-label">03_PROTOCOL</div>
+				</div>
+				<div class="matrix-point" style="top: 15%; left: 85%;" data-service="AI Transformation">
+					<div class="point-glow"></div>
+					<div class="point-label">04_TRANSFORM</div>
+				</div>
+			</div>
+
+			<!-- Service Detail Overlay (Appears on Hover) -->
+			<div id="service-overlay" class="service-overlay">
+				<div class="overlay-inner">
+					<p class="overlay-tagline">SELECTED_INTERSECTION</p>
+					<h3 id="overlay-title" class="serif-h3">Founder Storytelling</h3>
+					<p id="overlay-desc" class="overlay-body">Build the founder's real narrative — for press, podcasts, and fundraising.</p>
+					<button class="btn-dashboard">Explore Offering</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const points = document.querySelectorAll('.matrix-point');
+	const overlay = document.getElementById('service-overlay');
+	const title = document.getElementById('overlay-title');
+	const desc = document.getElementById('overlay-desc');
+
+	const services = {
+		"Founder Storytelling": "Build the founder's real narrative — for press, podcasts, and fundraising.",
+		"AI-Enabled Positioning": "Leverage AI to synthesize customer evidence and market gaps.",
+		"The Growth Protocol": "A scientific diagnostic of your revenue engine and 90-day roadmap.",
+		"AI Transformation": "Level up your marketing org with custom AI workflows by team and function."
+	};
+
+	points.forEach(point => {
+		point.addEventListener('mouseenter', () => {
+			const serviceName = point.getAttribute('data-service');
+			if (serviceName && overlay && title && desc) {
+				title.innerText = serviceName;
+				desc.innerText = services[serviceName as keyof typeof services];
+				overlay.classList.add('active');
+			}
+		});
+	});
+
+	// Follow Mouse Effect for Grid
+	const grid = document.querySelector('.matrix-grid');
+	grid?.addEventListener('mousemove', (e: any) => {
+		const rect = grid.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const y = e.clientY - rect.top;
+		document.body.style.setProperty('--mouse-x', `${x}px`);
+		document.body.style.setProperty('--mouse-y', `${y}px`);
+	});
+</script>
+
+<style>
+	.matrix-section { padding: 10rem 0; background: #FFF; position: relative; }
+	.matrix-header { text-align: center; margin-bottom: 6rem; }
+	
+	.serif-h2 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--fg-warm-black); }
+	.matrix-sub { font-family: var(--font-serif); font-size: 1.3rem; color: var(--p-gray); font-style: italic; }
+
+	.matrix-container {
+		height: 600px;
+		border: 1px solid var(--border-light);
+		position: relative;
+		background: var(--bg-off-white);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	.matrix-grid {
+		width: 100%;
+		height: 100%;
+		background-image: 
+			linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+		background-size: 40px 40px;
+		position: relative;
+		cursor: crosshair;
+	}
+
+	/* Axis Labels */
+	.axis-y {
+		position: absolute;
+		left: -4rem;
+		top: 50%;
+		transform: rotate(-90deg) translateY(-50%);
+		font-size: 0.6rem;
+		font-weight: 700;
+		letter-spacing: 0.2rem;
+		color: var(--p-gray);
+	}
+	.axis-x {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 0.6rem;
+		font-weight: 700;
+		letter-spacing: 0.2rem;
+		color: var(--p-gray);
+	}
+
+	.matrix-point {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background: var(--fg-warm-black);
+		border-radius: 50%;
+		z-index: 10;
+		cursor: pointer;
+		transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	.matrix-point:hover { transform: scale(2); background: var(--p-orange); }
+
+	.point-glow {
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40px; height: 40px;
+		background: radial-gradient(circle, var(--p-orange) 0%, transparent 70%);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	.matrix-point:hover .point-glow { opacity: 0.4; }
+
+	.point-label {
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		white-space: nowrap;
+		font-size: 0.6rem;
+		font-weight: 800;
+		letter-spacing: 0.05rem;
+		color: var(--p-gray);
+	}
+
+	.service-overlay {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+		width: 320px;
+		background: #FFF;
+		border: 1px solid var(--fg-warm-black);
+		padding: 2rem;
+		box-shadow: 10px 10px 0px var(--p-orange);
+		opacity: 0;
+		transform: translateX(20px);
+		transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+		z-index: 20;
+		border-radius: 4px;
+	}
+
+	.service-overlay.active { opacity: 1; transform: translateX(0); }
+
+	.overlay-tagline { font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1rem; color: var(--p-orange); margin-bottom: 1rem; }
+	.serif-h3 { font-size: 1.75rem; margin-bottom: 1rem; line-height: 1.2; }
+	.overlay-body { font-size: 0.9rem; color: var(--p-gray); margin-bottom: 2rem; line-height: 1.5; }
+
+	@media (max-width: 768px) {
+		.matrix-container { height: 400px; }
+		.service-overlay { position: relative; top: 0; right: 0; width: 100%; margin-top: 2rem; box-shadow: 5px 5px 0px var(--p-orange); }
+		.axis-y { display: none; }
+	}
+</style>

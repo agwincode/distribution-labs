@@ -6,8 +6,8 @@
 
 		<div class="team-intro reveal">
 			<p class="section-label">THE OPERATORS</p>
-			<h2 class="team-headline">While you're recruiting,<br><em>your market is moving.</em></h2>
-			<p class="team-lead">We build the marketing engine — PR, SEO, demand gen, events — architected to work together while you find the right long-term leader.</p>
+			<h2 class="team-headline">Marketing leadership that moves at<br><em>founder speed.</em></h2>
+			<p class="team-lead">We're former SVPs and GMs from Carta, Asana, Descript, and OpenSea. We've run marketing at scale. We step in at CMO-level: so you don't lose a single day of growth.</p>
 		</div>
 
 		<div class="team-grid">
@@ -17,15 +17,9 @@
 					<img src="/angela.jpeg" alt="Angela Winegar" width="400" height="400" loading="lazy" />
 				</div>
 				<h3 class="member-name">Angela Winegar</h3>
-				<p class="member-prev">Carta</p>
-			</div>
-
-			<div class="member reveal">
-				<div class="member-photo">
-					<img src="/whitney.jpeg" alt="Whitney Steele" width="400" height="400" loading="lazy" />
-				</div>
-				<h3 class="member-name">Whitney Steele</h3>
-				<p class="member-prev">Descript, OpenSea</p>
+				<p class="member-title">SVP of Marketing & Strategy</p>
+				<p class="member-prev">Invisible Technologies, Carta</p>
+				<p class="member-stat">Grew Carta from ~$100M to ~$500M revenue</p>
 			</div>
 
 			<div class="member reveal">
@@ -33,7 +27,18 @@
 					<img src="/sarah.jpeg" alt="Sarah Charlton" width="400" height="400" loading="lazy" />
 				</div>
 				<h3 class="member-name">Sarah Charlton</h3>
-				<p class="member-prev">Moonvalley, Asana, Dropbox</p>
+				<p class="member-title">GM Global Growth</p>
+				<p class="member-prev">Asana, Moonvalley, Dropbox</p>
+				<p class="member-stat">Scaled Asana self-serve from &lt;$25M through IPO</p>
+			</div>
+
+			<div class="member reveal">
+				<div class="member-photo">
+					<img src="/whitney.jpeg" alt="Whitney Steele" width="400" height="400" loading="lazy" />
+				</div>
+				<h3 class="member-name">Whitney Steele</h3>
+				<p class="member-title">VP Marketing</p>
+				<p class="member-prev">Descript, OpenSea</p>
 			</div>
 
 		</div>
@@ -63,12 +68,11 @@
 	}
 
 	.team-headline {
-		font-family: var(--font-display);
-		font-weight: 900;
-		font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-		text-transform: uppercase;
-		line-height: 1;
-		letter-spacing: -0.01em;
+		font-family: var(--font-headline);
+		font-weight: 700;
+		font-size: clamp(2rem, 3.5vw, 3rem);
+		line-height: 1.1;
+		letter-spacing: -0.02em;
 		margin: 0 0 2rem;
 		color: var(--white);
 		max-width: 600px;
@@ -83,7 +87,7 @@
 		font-family: var(--font-body);
 		font-size: 1rem;
 		font-weight: 400;
-		color: rgba(237, 236, 227, 0.55);
+		color: rgba(237, 236, 227, 0.75);
 		line-height: 1.75;
 		max-width: 520px;
 		margin: 0;
@@ -126,13 +130,33 @@
 		margin: 0 0 0.4rem;
 	}
 
-	.member-prev {
+	.member-title {
 		font-family: var(--font-body);
 		font-size: 0.82rem;
+		font-weight: 500;
+		color: var(--white);
+		margin: 0 0 0.2rem;
+		letter-spacing: 0.02em;
+	}
+
+	.member-prev {
+		font-family: var(--font-body);
+		font-size: 0.78rem;
 		font-weight: 400;
 		color: var(--muted);
-		margin: 0;
+		margin: 0 0 0.75rem;
 		letter-spacing: 0.02em;
+	}
+
+	.member-stat {
+		font-family: var(--font-body);
+		font-size: 0.78rem;
+		font-weight: 400;
+		font-style: italic;
+		color: var(--sky);
+		opacity: 0.85;
+		margin: 0;
+		line-height: 1.5;
 	}
 
 	/* ── Responsive ───────────────────────────── */

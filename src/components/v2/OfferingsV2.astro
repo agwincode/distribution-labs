@@ -1,0 +1,159 @@
+---
+---
+
+<section id="offerings" class="offerings-v2">
+	<div class="container">
+		<div class="offerings-header reveal">
+			<p class="badge-v2">02_THE PRODUCT OFFERINGS</p>
+			<h2 class="serif-h2">High-Leverage <span class="text-underline">Strategic Sprints.</span></h2>
+			<p class="offerings-sub">We provide the technical infrastructure to turn your narrative into a precision execution engine.</p>
+		</div>
+
+		<div class="offerings-grid">
+			<!-- Offering 1 -->
+			<div class="offering-card reveal" style="transition-delay: 0.1s;">
+				<div class="card-status">STATUS: ACTIVE</div>
+				<div class="card-content">
+					<h3 class="serif-h3">Founder Storytelling</h3>
+					<p class="card-desc">Build the founder's real narrative — for press, podcasts, and fundraising. We find the "Why" that resonates with Series A–C markets.</p>
+					<ul class="card-list">
+						<li>Podcast & Keynote Strategy</li>
+						<li>Fundraising Narrative Deck</li>
+						<li>PR Channel Mapping</li>
+					</ul>
+				</div>
+				<a href="#contact" class="card-btn">Explore Sprint</a>
+			</div>
+
+			<!-- Offering 2 -->
+			<div class="offering-card reveal" style="transition-delay: 0.2s;">
+				<div class="card-status">STATUS: ACTIVE</div>
+				<div class="card-content">
+					<h3 class="serif-h3">AI-Enabled Positioning</h3>
+					<p class="card-desc">Leverage AI to synthesize customer evidence and market gaps. We help you find your unique coordinates in the competitive landscape.</p>
+					<ul class="card-list">
+						<li>AI-Synthesized Market Gap Map</li>
+						<li>Sales Storyline (First Call Deck)</li>
+						<li>Homepage Revamp Blueprint</li>
+					</ul>
+				</div>
+				<a href="#contact" class="card-btn">Explore Sprint</a>
+			</div>
+
+			<!-- Offering 3 -->
+			<div class="offering-card reveal" style="transition-delay: 0.3s;">
+				<div class="card-status">STATUS: ACTIVE</div>
+				<div class="card-content">
+					<h3 class="serif-h3">The Growth Protocol</h3>
+					<p class="card-desc">A scientific diagnostic of your revenue engine. We identify the "Friction points" and provide a 90-day roadmap for acceleration.</p>
+					<ul class="card-list">
+						<li>Revenue Engine Diagnostic</li>
+						<li>90-Day Priority Roadmap</li>
+						<li>Next-Hire Recommendation</li>
+					</ul>
+				</div>
+				<a href="#contact" class="card-btn">Explore Sprint</a>
+			</div>
+
+			<!-- Offering 4 -->
+			<div class="offering-card reveal" style="transition-delay: 0.4s;">
+				<div class="card-status">STATUS: ACTIVE</div>
+				<div class="card-content">
+					<h3 class="serif-h3">AI Transformation</h3>
+					<p class="card-desc">Level up your marketing org with custom AI workflows. Not point solutions, but a complete operating protocol for the age of AI.</p>
+					<ul class="card-list">
+						<li>Custom Function Workflows</li>
+						<li>Human-in-the-Loop Protocol</li>
+						<li>Toolstack Rationalization</li>
+					</ul>
+				</div>
+				<a href="#contact" class="card-btn">Explore Sprint</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.offerings-v2 { padding: 10rem 0; background: var(--bg-off-white); }
+	.offerings-header { text-align: center; margin-bottom: 6rem; }
+	.serif-h2 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--fg-warm-black); }
+	.offerings-sub { font-family: var(--font-serif); font-size: 1.3rem; color: var(--p-gray); font-style: italic; max-width: 700px; margin: 0 auto; }
+
+	.offerings-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.offering-card {
+		background: #FFF;
+		border: 1px solid var(--border-light);
+		padding: 3rem;
+		border-radius: 12px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+		transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+		min-height: 480px;
+	}
+
+	.offering-card:hover {
+		transform: translateY(-8px);
+		border-color: var(--p-orange);
+		box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+	}
+
+	.card-status {
+		font-size: 0.6rem;
+		font-weight: 800;
+		letter-spacing: 0.1rem;
+		color: var(--p-orange);
+		margin-bottom: 2rem;
+	}
+
+	.serif-h3 { font-size: 2.25rem; margin-bottom: 1.5rem; }
+	.card-desc { font-size: 1.05rem; color: var(--p-gray); line-height: 1.6; margin-bottom: 2rem; }
+
+	.card-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 3rem 0;
+	}
+
+	.card-list li {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--fg-warm-black);
+		margin-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.card-list li::before {
+		content: "—";
+		position: absolute;
+		left: 0;
+		color: var(--p-orange);
+	}
+
+	.card-btn {
+		text-decoration: none;
+		color: var(--fg-warm-black);
+		font-size: 0.8rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border-light);
+		display: inline-block;
+		transition: all 0.3s;
+	}
+
+	.card-btn:hover { color: var(--p-orange); border-color: var(--p-orange); }
+
+	@media (max-width: 968px) {
+		.offerings-grid { grid-template-columns: 1fr; }
+		.serif-h2 { font-size: 2.75rem; }
+	}
+</style>
