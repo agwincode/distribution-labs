@@ -5,10 +5,10 @@
 	<div class="container">
 		<p class="strip-label">WHERE WE'VE BUILT</p>
 		<div class="logo-row">
-			<img src="/logos/carta.svg"     alt="Carta"                  class="logo logo-md" />
+			<img src="/logos/carta.svg"     alt="Carta"                  class="logo logo-carta" />
 			<img src="/logos/asana.svg"     alt="Asana"                  class="logo logo-lg" />
-			<img src="/logos/descript.svg"  alt="Descript"               class="logo logo-icon" />
-			<img src="/logos/opensea.svg"   alt="OpenSea"                class="logo logo-icon opensea" />
+			<img src="/logos/descript-wordmark.svg"  alt="Descript"      class="logo logo-md" />
+			<img src="/logos/opensea-wordmark.svg" alt="OpenSea"          class="logo logo-opensea" />
 			<img src="/logos/dropbox.svg"   alt="Dropbox"                class="logo logo-xl" />
 			<img src="/logos/invisible.svg" alt="Invisible Technologies" class="logo" />
 		</div>
@@ -25,7 +25,7 @@
 
 	.strip-label {
 		font-family: var(--font-display);
-		font-size: 0.65rem;
+		font-size: 0.85rem;
 		font-weight: 700;
 		letter-spacing: 0.28em;
 		color: var(--orange);
@@ -38,7 +38,7 @@
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		gap: 2rem;
+		gap: 1rem;
 	}
 
 	.logo {
@@ -53,15 +53,19 @@
 	.logo-icon { height: 36px; }
 	.logo-icon.opensea { height: 40px; }
 	/* Wordmarks that need a bit more presence */
-	.logo-md { height: 31px; }   /* carta +20%+20% */
-	.logo-lg { height: 38px; }   /* asana +30%+30% */
-	.logo-xl { height: 46px; }   /* dropbox +30%+20%+30% */
+	.logo-carta { height: 52px; }
+	.logo-md { height: 31px; }
+	.logo-opensea { height: 34px; }
+	.logo-lg { height: 41px; }
+	.logo-xl { height: 32px; }
 
 	.logo:hover { opacity: 0.75; }
 
-	@media (max-width: 768px) {
-		.logo-row { justify-content: flex-start; gap: 2rem 2.5rem; }
+	@media (max-width: 760px) {
+		.logo-row { justify-content: flex-start; gap: 1rem 1.25rem; }
 		.logo { height: 18px; }
 		.logo-icon { height: 28px; }
+		.logo-lg { height: 47px; }
+		.logo-xl { height: 64px; }
 	}
 </style>
