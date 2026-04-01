@@ -3,7 +3,7 @@
 
 <section id="hero" class="hero">
 
-	<video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+	<video class="hero-video" autoplay muted loop playsinline poster="/trees.jpg" aria-hidden="true">
 		<source src="/hero.mp4" type="video/mp4" />
 	</video>
 
@@ -192,21 +192,17 @@
 	}
 
 	/* ── Responsive ──────────────────────────── */
-	@media (max-width: 1024px) {
-		.display-h1 { font-size: clamp(4rem, 10vw, 7rem); }
-	}
-
 	@media (max-width: 768px) {
-		.nav { flex-wrap: wrap; gap: 1.25rem; padding: 1.75rem 0; }
-		.nav-right { gap: 1.5rem; }
-		.hero-body { padding: 6vh 0 5rem; }
-		.display-h1 { font-size: clamp(3.5rem, 13vw, 5.5rem); margin-bottom: 2.5rem; }
-		.hero-sub { font-size: 0.95rem; }
+		.hero-body { padding: 5vh 0 4rem; }
+		.display-h1 { font-size: clamp(3rem, 12vw, 5rem); margin-bottom: 2rem; }
+		.hero-sub { font-size: 0.95rem; max-width: 100%; }
 		.hero-scroll-rule { left: 1.5rem; right: 1.5rem; }
 	}
 
 	@media (max-width: 480px) {
-		.display-h1 { font-size: clamp(3rem, 14vw, 4rem); }
-		.nav-link { display: none; }
+		.hero-body { padding: 4vh 0 3rem; }
+		.display-h1 { font-size: clamp(2.6rem, 11vw, 3.5rem); margin-bottom: 1.75rem; }
+		.hero-sub { font-size: 0.9rem; margin-bottom: 2.5rem; }
+		.eyebrow { margin-bottom: 1.75rem; }
 	}
 </style>

@@ -28,7 +28,7 @@
 				</div>
 				<h3 class="member-name">Sarah Charlton</h3>
 				<p class="member-title">GM Global Growth</p>
-				<p class="member-prev">Asana, Moonvalley, Dropbox</p>
+				<p class="member-prev">Asana, Moonvalley AI, Dropbox</p>
 				<p class="member-stat">Scaled Asana self-serve from &lt;$25M through IPO</p>
 			</div>
 
@@ -163,12 +163,17 @@
 
 	/* ── Responsive ───────────────────────────── */
 	@media (max-width: 768px) {
-		.team { padding: 6rem 0 7rem; }
-		.team-intro { margin-bottom: 3.5rem; }
+		.team { padding: 5rem 0 6rem; }
+		.team-intro { margin-bottom: 3rem; }
 		.team-grid {
 			grid-template-columns: 1fr;
-			gap: 3rem;
-			max-width: 360px;
+			gap: 2.5rem;
 		}
+		.team-headline { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+	}
+
+	@media (max-width: 480px) {
+		.team { padding: 4rem 0 5rem; }
+		.team-lead { font-size: 0.9rem; }
 	}
 </style>
